@@ -1,0 +1,36 @@
+body{
+    font-size: 40px;
+}
+p{
+    margin: 0;
+    display: block;
+}
+
+.first-block, .third-block{
+    background: cornflowerblue;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.second-block{
+
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0;
+}
+
+.second-blocks{
+    width: 30%;
+    height: 400px;
+    background: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.third-block{
+    height: 800px;
+}
