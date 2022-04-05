@@ -29,10 +29,11 @@ body{
 .one-block>i{
     margin-right: 10%;
     color: grey;
-    font-size: 40px;
+    font-size: 60px;
 }
 
 .one-block-discription>p {
+    line-height: 20px;
     margin: 0;
 }
 
