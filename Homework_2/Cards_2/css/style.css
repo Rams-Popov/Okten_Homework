@@ -1,0 +1,45 @@
+h1{
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.my-cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    width: 20%;
+    box-sizing: border-box;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #b6b6b6;
+    border-right: 2px solid #b6b6b6;
+}
+
+.card>i{
+    color: #b6b6b6;
+    font-size: 30px;
+}
+
+.card>h3{
+    color: #c22323;
+    font-size: 25px;
+}
+
+.discription{
+    text-align: center;
+    color: #b6b6b6;
+    line-height: 20px;
+
+}
+
+.learn-more {
+    box-sizing: border-box;
+    padding: 10px 20px;
+    color: white;
+    background: #459b9f;
+}
