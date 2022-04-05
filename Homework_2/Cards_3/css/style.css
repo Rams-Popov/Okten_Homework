@@ -16,7 +16,7 @@ body{
 
 .one-block {
     box-sizing: border-box;
-    padding: 0 50px;
+    padding: 30px 50px;
     justify-content: center;
     align-items: center;
     width: 90%;
@@ -33,10 +33,11 @@ body{
 }
 
 .one-block-discription>p {
-
+    margin: 0;
 }
 
 .one-block-discription>h4{
+    margin: 0;
     font-size: 20px;
     color: #ee9e3c;
     margin-bottom: 5px;
