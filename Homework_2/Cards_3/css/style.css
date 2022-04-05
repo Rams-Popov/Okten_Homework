@@ -1,0 +1,44 @@
+body{
+    box-sizing: border-box;
+    padding: 10% 5%;
+    margin: 0;
+    background: #08bdd4;
+}
+
+.all-blocks {
+    display: flex;
+}
+
+.thre-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.one-block {
+    box-sizing: border-box;
+    padding: 0 50px;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    background: white;
+    display: flex;
+    border-radius: 10px;
+    margin-bottom: 10%;
+}
+
+.one-block>i{
+    margin-right: 10%;
+    color: grey;
+    font-size: 40px;
+}
+
+.one-block-discription>p {
+
+}
+
+.one-block-discription>h4{
+    font-size: 20px;
+    color: #ee9e3c;
+    margin-bottom: 5px;
+}
+
