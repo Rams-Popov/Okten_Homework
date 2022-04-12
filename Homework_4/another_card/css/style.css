@@ -1,0 +1,112 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2vh;
+}
+
+.logo-header > div,
+.nav,
+.big-box-three-two > div,
+.store-tools > div,
+.types-of-baths,
+.related-products,
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: silver;
+    color: white;
+}
+
+.logo-header {
+    display: flex;
+    column-gap: 1vw;
+}
+
+.logo{
+    /*background: silver;*/
+    width: 20vw;
+    height: 10vh;
+}
+
+.header{
+    width: 79vw;
+    height: 10vh;
+}
+
+.big-box{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2vh;
+}
+
+.big-box-three,
+.big-box-three-two{
+    display: flex;
+    column-gap: 1vw;
+}
+
+.big-box-three-two{
+    width: 79vw;
+}
+
+.big-box-three,
+.big-box-three-two{
+    justify-content: right;
+}
+
+.nav{
+    position: absolute;
+    left: 0;
+
+    width: 20vw;
+    height: 48vh;
+}
+
+
+.bath-section-intro {
+    width: 58vw;
+    height: 30vh;
+}
+
+.ad{
+    width: 20vw;
+    height: 30vh;
+}
+
+.big-box-four{
+    display: flex;
+    column-gap: 1vw;
+}
+
+.store-tools{
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    height: 40vh;
+    row-gap: 2vh;
+    justify-content: end;
+}
+
+.store-locator,
+.tools{
+    width: 20vw;
+    height: 10vh;
+}
+
+
+.types-of-baths{
+    width: 58vw;
+    height: 40vh;
+}
+
+.related-products{
+    width: 20vw;
+    height: 40vh;
+}
+
+.footer{
+    width: 100%;
+    height: 20vh;
+}

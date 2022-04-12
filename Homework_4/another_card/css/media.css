@@ -1,0 +1,71 @@
+@media screen and (max-width: 425px){
+    h2{
+        font-size: 15px;
+    }
+
+    .container,
+    .big-box{
+        row-gap: 0.5vh;
+    }
+
+    .logo-header{
+        column-gap: 1px;
+    }
+
+    .header{
+        width: 80vw;
+    }
+
+    .big-box-three{
+        flex-direction: column;
+        row-gap: 0.5vh;
+    }
+
+    .nav{
+        position: static;
+        width: 100vw;
+        height: 15vh;
+    }
+
+    .big-box-three-two{
+        width: 100vw;
+    }
+
+    .bath-section-intro{
+        width: 75vw;
+    }
+
+    .ad{
+        width: 25vw;
+    }
+
+    .big-box-four{
+        flex-direction: column;
+        row-gap: 0.5vh;
+
+    }
+    .store-tools{
+        flex-direction: row;
+        order: 3;
+        height: 15vh;
+        width: 100vw;
+        column-gap: 1vw;
+    }
+
+    .store-locator,
+    .tools{
+        height: 100%;
+        width: 50%;
+    }
+
+    .types-of-baths{
+        width: 100vw;
+        height: 60vh;
+        order: 1;
+    }
+
+    .related-products{
+        width: 100vw;
+        order: 2;
+    }
+}
