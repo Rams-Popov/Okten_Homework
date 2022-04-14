@@ -25,3 +25,15 @@ let bool8 = 10 < 10;
 let bool9 = 10 != 10;
 let bool10 = 123 === '123';
 let bool11 = 123 == '123';
+
+console.log(bool1)
+console.log(bool2)
+console.log(bool3)
+console.log(bool4)
+console.log(bool5)
+console.log(bool6)
+console.log(bool7)
+console.log(bool8)
+console.log(bool9)
+console.log(bool10)
+console.log(bool11)
