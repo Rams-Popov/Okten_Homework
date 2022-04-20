@@ -14,10 +14,10 @@ if (isRoadClear !== "так" && isRoadClear !== "ні"){
 }
 
 if (colorTrafficLights === "зелений" && isRoadClear === "ні"){
-        alert("Іди спокійно")
+        alert("Go")
     }
 else if (colorTrafficLights === "зелений" && isRoadClear === "так"){
-        alert("Почекай поки проїдуть СВИНОСОБАКИ!")
+        alert("Wait!")
     }
 else if (colorTrafficLights === "жовтий" && isRoadClear === "ні"){
     alert("Трохи почекай")

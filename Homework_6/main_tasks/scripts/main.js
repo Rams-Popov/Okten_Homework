@@ -61,7 +61,7 @@ switch (prompt("Ведіть день тижня (1-7)")){
 }
 
 
-let number1 = 27;
-let number2 = 26;
+let number1 = 25;
+let number2 = 25;
 
-console.log(number1 >= number2 ? number1 : number2);
+console.log(number1 === number2 ? `Числа рівні ${number1}` : number1 > number2 ? number1 : number2);
