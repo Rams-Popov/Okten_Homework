@@ -19,7 +19,7 @@ while (i < 20){
 // Task 4
 let x = 0;
 while (x < 20){
-    document.write(`<h1>Довільний текст ${x}</h1>`);
+    document.write(`<h1>Довільний текст ${x}</h1>`)
     x++;
 }
 
@@ -27,12 +27,12 @@ while (x < 20){
 // Task 5
 let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
 
-document.write("<ul>");
+document.write("<ul>")
 for (let j = 0; j < listOfItems.length; j++) {
     // let listOfItem = listOfItems[j];
-    document.write(`<li>${listOfItems[j]}</li>`);
+    document.write(`<li>${listOfItems[j]}</li>`)
 }
-document.write("</ul>");
+document.write("</ul>")
 
 
 
@@ -60,12 +60,12 @@ let products = [
     },
 ];
 
-document.write("<div class='product-cards' style='display: flex; justify-content: space-evenly'>");
+document.write("<div class='product-cards' style='display: flex; justify-content: space-evenly'>")
 for (let product of products) {
-    document.write("<div class='product-card'>");
-    document.write(`<h3 class="product-title" style="text-align: center">${product.title.toUpperCase()}. Price - ${product.price}</h3>`);
+    document.write("<div class='product-card'>")
+    document.write(`<h3 class="product-title" style="text-align: center">${product.title.toUpperCase()}. Price - ${product.price}</h3>`)
     document.write(`<img class="product-image" style="width: 300px" src="${product.image}" alt="">`)
-    document.write("</div>");
+    document.write("</div>")
 
 }
-document.write("</div>");
+document.write("</div>")
