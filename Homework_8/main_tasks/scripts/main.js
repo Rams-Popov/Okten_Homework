@@ -14,18 +14,21 @@ function rectangleArea(a, b) {
     return a * b;
 }
 
+rectangleArea(2,45);
 
 function circleArea(radius) {
     chengeString(radius);
     return PI * radius ** 2;
 }
 
+circleArea(34);
 
 function cylinderArea(height, radius) {
     chengeString(height, radius);
     return 2 * PI * radius * height;
 }
 
+cylinderArea(2,45);
 
 function unpackingArray(array) {
     for (let arrayElement of array) {
@@ -33,10 +36,14 @@ function unpackingArray(array) {
     }
 }
 
+unpackingArray([2,3,4,5,6,7])
+
 
 function paragraph(text) {
     document.write(`<p>${text}</p>`);
 }
+
+paragraph("some Text");
 
 
 function listThreeElements(textElements) {
@@ -47,6 +54,8 @@ function listThreeElements(textElements) {
     document.write(`</ul>`);
 }
 
+listThreeElements("some Text");
+
 
 function listElements(textElements, quantityLine) {
     document.write(`<ul>`);
@@ -56,6 +65,8 @@ function listElements(textElements, quantityLine) {
     document.write(`</ul>`);
 }
 
+listElements("some Text", 10)
+
 
 function listWithArray(array) {
     document.write(`<ul>`);
@@ -64,6 +75,8 @@ function listWithArray(array) {
     }
     document.write(`</ul>`);
 }
+
+listWithArray([2,5,354,654,32,1,45]);
 
 
 function objectOutput(array) {
@@ -80,6 +93,15 @@ function objectOutput(array) {
     }
 }
 
+let users = [
+    {id: 'vasya', name: 31, age: false},
+    {id: 'petya', name: 30, age: true},
+    {id: 'kolya', name: 29, age: true},
+    {id: 'olya', name: 28, age: false},
+];
+
+objectOutput(users);
+
 
 function minNumber(array) {
     let minNum = array[0];
@@ -91,6 +113,8 @@ function minNumber(array) {
     return minNum;
 }
 
+minNumber([2,5,354,654,32,1,45]);
+
 
 function sumNumber(array) {
     let sumNum = 0;
@@ -99,3 +123,5 @@ function sumNumber(array) {
     }
     return sumNum;
 }
+
+sumNumber([2,5,32,1,45]);
