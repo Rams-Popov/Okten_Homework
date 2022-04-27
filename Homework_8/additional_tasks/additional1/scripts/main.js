@@ -1,3 +1,4 @@
+
 function changeString() {
     for (let argument of arguments) {
         argument = +argument;
@@ -118,4 +119,33 @@ function addArrays(array1, array2) {
 
 addArrays([2,3,4], [5,8,3]);
 
+
+
+
+let arrayWithObject = [{name: 'Dima', age: 13}, {model: 'Camry'}];
+
+function keysWithArray(array) {
+    let arrayKeys = [];
+    for (let arrayElement of array) {
+        for (let arrayElementKey in arrayElement) {
+            // console.log(arrayElementKey);
+            arrayKeys.push(arrayElementKey);
+        }
+    }
+    return arrayKeys;
+}
+
+keysWithArray(arrayWithObject);
+
+function valuesKeysWithArray(array) {
+    let arrayValues = [];
+    for (let arrayElement of array) {
+        for (let arrayElementKey in arrayElement) {
+            arrayValues.push(arrayElement[arrayElementKey]);
+        }
+    }
+    return arrayValues;
+}
+
+valuesKeysWithArray(arrayWithObject);
 
