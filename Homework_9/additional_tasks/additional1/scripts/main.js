@@ -33,12 +33,28 @@ rangeOfTwoNumber(6,2);
 //   foo([9,8,0,4], 1) // ==> [ 9 ,0, 8, 4 ]
 //   foo([9,8,0,4], 2) // ==> [ 9, 8, 4, 0 ]
 
-arr1 = [9,8,0,4];
 
-let changeArray = (array, i) => [array[i], array[i+1]] = [array[i+1], array[i]];
+// arr1 = [9,8,0,4];
+//
+// let changeArray = (array, i) => [array[i], array[i+1]] = [array[i+1], array[i]];
+//
+// changeArray(arr1,2);
+// console.log(arr1)
 
-changeArray(arr1,2);
-console.log(arr1)
+
+
+let changeArray2 = (array, i) =>{
+    let some = array[i];
+    array[i] = array[i+1];
+    array[i+1] = some;
+}
+
+arr2 = [9,8,0,4];
+
+changeArray2(arr2, 1);
+console.log(arr2)
+
+
 
 
 // - Сворити функцію яка буде переносити елементи з значенням 0 у кінець маисву.
@@ -49,25 +65,44 @@ console.log(arr1)
 // [0,1,2,3,4] => [1,2,3,4,0]
 // [0,0,1,0]   => [1,0,0,0]
 
-let arr2 = [1,0,6,0,3,0,1,2,3,4,0,0,1,0,0,0,1,0];
+// let arr2 = [1,0,6,0,3,0,1,2,3,4,0,0,1,0,0,0,1,0];
+//
+// let changeBigArray = (array) =>{
+//     if (array.length > 100){
+//         return "Very big array";
+//     }
+//     let someArr = [];
+//     for (let i = 0; i < array.length; i++) {
+//         if(array[i] !== 0){
+//                 someArr.push(array[i]);
+//             }
+//     }
+//     for (let i = 0; i < array.length; i++) {
+//         if(array[i] === 0){
+//             someArr.push(array[i]);
+//         }
+//     }
+//     return someArr;
+// }
+//
+// arr2 = changeBigArray(arr2);
+// console.log(arr2);
 
-let changeBigArray = (array) =>{
-    if (array.length > 100){
-        return "Very big array";
-    }
-    let someArr = [];
-    for (let i = 0; i < array.length; i++) {
-        if(array[i] !== 0){
-                someArr.push(array[i]);
-            }
-    }
-    for (let i = 0; i < array.length; i++) {
-        if(array[i] === 0){
-            someArr.push(array[i]);
+
+let arr3 = [1,0,6,0,3,0,1,2,3,4,0,0,1,0,0,0,1,0];
+
+let changeBigArray2 = (array) =>{
+    for (let i = 0, j = 0; i < array.length; i++) {
+        if(array[i] !==0){
+            let some = array[i];
+            array[i] = array[j];
+            array[j] = some;
+            j++;
         }
+
     }
-    return someArr;
+    return array;
 }
 
-arr2 = changeBigArray(arr2);
-console.log(arr2);
+arr3 = changeBigArray2(arr3)
+console.log(arr3)
