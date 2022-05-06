@@ -94,7 +94,7 @@ console.log(newArray);
 // }
 
 let cardSuitsArray = ['spade', 'diamond','heart', 'clubs'];
-let valuesArray = [6, 7, 8, 9, 10, 'ace','jack','queen','king','joker'];
+let valuesArray = ["6", "7", "8", "9", "10", 'ace','jack','queen','king','joker'];
 
 let deckOfCards = []
 
@@ -114,7 +114,7 @@ for (let cardSuitElement of cardSuitsArray) {
 console.log(deckOfCards.filter(value => value.cardSuit === "spade").find(value => value.value === "ace"));
 
 // - всі шістки
-console.log(deckOfCards.filter(value => value.value === 6));
+console.log(deckOfCards.filter(value => value.value === "6"));
 
 // - всі червоні карти
 console.log(deckOfCards.filter(value => value.color === "red"));
@@ -123,4 +123,5 @@ console.log(deckOfCards.filter(value => value.color === "red"));
 console.log(deckOfCards.filter(value => value.cardSuit === "diamond"));
 
 // - всі трефи від 9 та більше
-console.log(deckOfCards.filter(value => value.cardSuit === "clubs").filter(value => value.value > 9 || typeof value.value === "string"));
+// console.log(deckOfCards.filter(value => value.cardSuit === "clubs").filter(value => value.value > 9 || typeof value.value === "string"));
+console.log(deckOfCards.filter(value => value.cardSuit === "clubs" && value.value.length > 1 || value.value === "9" && value.cardSuit === "clubs"));
