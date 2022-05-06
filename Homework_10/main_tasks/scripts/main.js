@@ -41,11 +41,10 @@ console.log(stringToarray(str2));
 
 let array1 = [10,8,-7,55,987,-1011,0,1050,0];
 
-// let array2 = array1.map(value => value + "");
-
-let array2 = array1.map(function (value){
-    return value + "";
-});
+let array2 = array1.map(value => value + "");
+// let array2 = array1.map(function (value){
+//     return value + "";
+// });
 console.log(array2);
 
 
