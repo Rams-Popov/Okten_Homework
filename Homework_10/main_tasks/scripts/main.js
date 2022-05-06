@@ -94,9 +94,12 @@ console.log(newArray);
 // }
 
 let cardSuitsArray = ['spade', 'diamond','heart', 'clubs'];
-let valuesArray = ["6", "7", "8", "9", "10", 'ace','jack','queen','king','joker'];
+let valuesArray = ["6", "7", "8", "9", "10", 'ace','jack','queen','king'];
 
-let deckOfCards = []
+let deckOfCards = [
+    {cardSuit: null, value: 'joker', color: 'red'},
+    {cardSuit: null, value: 'joker', color: 'black'}
+]
 
 for (let cardSuitElement of cardSuitsArray) {
     for (let valuesElement of valuesArray) {
@@ -109,6 +112,8 @@ for (let cardSuitElement of cardSuitsArray) {
         deckOfCards.push({cardSuit: cardSuitElement, value: valuesElement, color: colorElement})
     }
 }
+
+console.log(deckOfCards);
 
 // - знайти піковий туз
 console.log(deckOfCards.filter(value => value.cardSuit === "spade").find(value => value.value === "ace"));
