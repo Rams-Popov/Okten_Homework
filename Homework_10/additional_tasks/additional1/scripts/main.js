@@ -12,7 +12,7 @@ console.log(cutString("наслаждение", 3));
 
 
 // - Напишіть функцію delete_characters(str, length), яка повертає підрядок, що складається із зазначеної кількості символів.
-    let str2 = 'Каждый охотник желает знать';
+let str2 = 'Каждый охотник желает знать';
 // document.writeln(delete_characters(str, 7)); // Каждый
 
 let delete_characters = (str, length) => str.split(" ").find(value => value.length === length);
@@ -22,7 +22,7 @@ console.log(delete_characters(str2, 7));
 
 // - Напишіть функцію insert_dash(str), яка приймає рядок str як аргумент і вставляє тире (-) між словами.
 // При цьому всі символи рядка необхідно перевести у верхній регістр.
-    let str3 = "HTML JavaScript PHP";
+let str3 = "HTML JavaScript PHP";
 // document.writeln(insert_dash(str)); // 'HTML-JAVASCRIPT-PHP'
 //
 
@@ -183,26 +183,51 @@ console.log(coursesArray.sort((a, b) => b.modules.length - a.modules.length));
 
 
 // - Напишіть функцію count(str, stringsearch), яка повертає кількість символів stringsearch у рядку str.
-    let symb = "о", str4 = "Астрономия это наука о небесных объектах";
 // document.writeln(count(str, symb)) // 5
 
-let count = (str, stringsearch) => {
-    console.log(str.split("").filter(value => value === stringsearch));
-    return 1;
-}
+let symb = "о", str4 = "Астрономия это наука о небесных объектах";
+let count = (str, stringsearch) => str.split("").filter(value => value === stringsearch).length;
 
 console.log(count(str4, symb));
 
 //
 // - Напишіть функцію cutString(str, n), яка видаляє зайві слова з рядка str, залишивши у ній n слів.
-//     let str = "Сила тяжести приложена к центру масс тела";
+
 // document.writeln(cutString(str, 5)) // 'Сила тяжести приложена к центру'
-//
+
+let str5 = "Сила тяжести приложена к центру масс тела";
+let cutString2 = (str, n) => console.log(str.split(" ").slice(0, n).join(" "));
+
+cutString2(str5, 5);
+
 //
 // -стоврити масив книжок (назва, кількість сторінок, автори , жанри).
+
+let booksArray = [
+    {name: "Harry Potter", pages: 800, genres: ["Fantastic", "Novel"], authors: ["J. K. Rowling", "Mary GrandPré"]},
+    {name: "The Hunger Games", pages: 600, genres: ["Fantastic", "Novel"], authors:["Suzanne Collins"]},
+    {name: "Doctor Sleep", pages: 700, genres: ["Horror", "Fantastic"], authors:["Stephen King"]},
+    {name: "Harry Potter and secret room", pages: 850, genres: ["Fantastic", "Novel"], authors: ["J. K. Rowling", "Mary GrandPré"]},
+    {name: "The Woman in Black", pages: 650, genres: ["Fantastic", "Horror", "Novel"], authors:["Susan Hill", "John Lawrence"]},
+    {name: "Cell", pages: 340, genres: ["Horror"], authors:["Stephen King", "Mark Stutzman"]},
+    {name: "The Lord of the Rings", pages: 1178, genres: ["High fantasy", "Adventure"], authors: ["J. R. R. Tolkien"]},
+    {name: "The Da Vinci Code", pages: 670, genres: ["Mystery", "Detective fiction", "Conspiracy fiction", "Thriller"], authors:["Dan Brown", "Ron Howard"]},
+]
+
 // -знайти наібльшу книжку.
+console.log(booksArray.sort((a, b) => b.pages - a.pages)[0]);
+
 // - знайти книжку/ки з найбільшою кількістю жанрів
+console.log(booksArray.sort((a, b) => b.genres.length - a.genres.length)[0]);
+
 // - знайти книжку/ки з найдовшою назвою
+console.log(booksArray.sort((a, b) => b.name.length - a.name.length)[0]);
+
 // - знайти книжку/ки які писали 2 автори
+console.log(booksArray.filter(value => value.authors.length > 1));
+
 // - знайти книжку/ки які писав 1 автор
+console.log(booksArray.filter(value => value.authors.length < 2));
+
 // - вісортувати книжки по кількості сторінок по зростанню
+console.log(booksArray.sort((a, b) => a.pages - b.pages));

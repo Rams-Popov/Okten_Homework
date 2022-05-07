@@ -109,7 +109,7 @@ for (let cardSuitElement of cardSuitsArray) {
         } else{
             colorElement = 'black';
         }
-        deckOfCards.push({cardSuit: cardSuitElement, value: valuesElement, color: colorElement})
+        deckOfCards.push({cardSuit: cardSuitElement, value: valuesElement, color: colorElement});
     }
 }
 
