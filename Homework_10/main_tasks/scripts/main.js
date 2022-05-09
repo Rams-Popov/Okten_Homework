@@ -130,3 +130,9 @@ console.log(deckOfCards.filter(value => value.cardSuit === "diamond"));
 // - всі трефи від 9 та більше
 // console.log(deckOfCards.filter(value => value.cardSuit === "clubs").filter(value => value.value > 9 || typeof value.value === "string"));
 console.log(deckOfCards.filter(value => value.cardSuit === "clubs" && value.value.length > 1 || value.value === "9" && value.cardSuit === "clubs"));
+
+
+
+
+
+
