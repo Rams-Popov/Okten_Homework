@@ -206,13 +206,14 @@ console.log(cinderellas);
 class Prince extends Cinderella{
     constructor(name, age, findShoe) {
         super(name, age);
+        delete this.footSize;
         this.findShoe = findShoe;
     }
 
 }
 
 let ownPrince = new Prince("Karl", "23", "36");
-
+console.log(ownPrince);
 
 //     За допомоги циклу знайти яка попелюшка повинна бути з принцом.
 for (let cinderella of cinderellas) {
