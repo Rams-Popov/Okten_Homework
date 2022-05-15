@@ -1,7 +1,8 @@
 
-const arrayCardId = [];
+let arrayCardId = [];
 
 const cheker = (number) =>{
+    arrayCardId.length = 0
     if (arrayCardId.find(value => value === number)){
        return "The number is busy";
     } else {
@@ -124,16 +125,20 @@ class UserAcaunt{
     constructor(name) {
         this.name = name;
         this.cards = [];
+        this.cardId = [];
+        this.cardId2 = arrayCardId;
     }
 
+
     addCard = () =>{
-        let i = 1;
         if (this.cards.length < 3){
-            this.cards.push(new userCard(this.cards.length + 1));
+            this.cards.push(new userCard(this.cardId.length + 1));
+            this.cardId.push(this.cardId.length + 1);
         }
     }
 
     getCardByKey = (idCard) => this.cards[idCard - 1];
+
 
 }
 
@@ -156,4 +161,14 @@ card2.takeCredits(50);
 
 console.log(card1.getCardOptions());
 console.log(card2.getCardOptions());
+
+
+const user2 = new UserAcaunt("Misha");
+
+user2.addCard();
+user2.addCard();
+user1.addCard();
+
+
+console.log(user1.cards[2].getCardOptions());
 
