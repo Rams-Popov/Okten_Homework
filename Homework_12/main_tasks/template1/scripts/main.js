@@ -7,7 +7,8 @@ const textOnParagraph = document.getElementById("content").innerHTML;
 
 // -- отримує текст з блоку з id "rules"
 
-const textOnDiv = document.getElementById("rules").innerHTML;
+const textOnDiv = document.getElementById("rules").textContent;
+
 
 // -- замініть текст параграфа з id 'content' на будь-який інший
 
