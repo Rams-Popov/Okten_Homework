@@ -1,20 +1,19 @@
 
-let arrayCardId = [];
-
-const cheker = (number) =>{
-    arrayCardId.length = 0
-    if (arrayCardId.find(value => value === number)){
-       return "The number is busy";
-    } else {
-        arrayCardId.push(number);
-    }
-}
+// let arrayCardId = [];
+//
+// const cheker = (number) =>{
+//     if (arrayCardId.find(value => value === number)){
+//        return "The number is busy";
+//     } else {
+//         arrayCardId.push(number);
+//     }
+// }
 
 function userCard(number){
-    const check = cheker(number);
-    if (check !== undefined){
-        return console.log("The number is busy, choose another number");
-    }
+    // const check = cheker(number);
+    // if (check !== undefined){
+    //     return console.log("The number is busy, choose another number");
+    // }
 
     const dataCards = {
         balance: 100,
@@ -95,7 +94,7 @@ function userCard(number){
     console.log(this.arrayMethods);
 }
 
-// const card1 = new userCard(3);
+// const card1 = new userCard(1);
 //
 // card1.putCredits(200);
 // card1.setTransactionLimit(150);
@@ -107,7 +106,7 @@ function userCard(number){
 //
 // console.log(card2.getCardOptions());
 //
-// const card3 = new userCard(4);
+// const card3 = new userCard(3);
 // card3.setTransactionLimit(500);
 // card3.putCredits(1000);
 // card3.transferCredits(500,card1)
@@ -121,54 +120,58 @@ function userCard(number){
 
 
 
-class UserAcaunt{
+class UserAcaunt {
     constructor(name) {
         this.name = name;
         this.cards = [];
         this.cardId = [];
-        this.cardId2 = arrayCardId;
     }
 
-
-    addCard = () =>{
-        if (this.cards.length < 3){
+    addCard = () => {
+        if (this.cards.length < 3) {
             this.cards.push(new userCard(this.cardId.length + 1));
             this.cardId.push(this.cardId.length + 1);
+        } else {
+            console.log('You already have three cards');
         }
     }
 
     getCardByKey = (idCard) => this.cards[idCard - 1];
-
-
 }
 
-const user1 = new UserAcaunt("Sasha");
-user1.addCard();
-user1.addCard();
-
-console.log(user1.cards);
-
-// console.log(user1.cards[1].getCardOptions());
-console.log(user1.getCardByKey(1));
 
 
-let card1 = user1.getCardByKey(1);
-let card2 = user1.getCardByKey(2);
-card1.putCredits(500);
-card1.setTransactionLimit(800);
-card1.transferCredits(300, card2);
-card2.takeCredits(50);
-
-console.log(card1.getCardOptions());
-console.log(card2.getCardOptions());
-
-
-const user2 = new UserAcaunt("Misha");
-
-user2.addCard();
-user2.addCard();
-user1.addCard();
-
-
-console.log(user1.cards[2].getCardOptions());
+// const user1 = new UserAcaunt("Sasha");
+//
+// user1.addCard();
+// user1.addCard();
+//
+// // console.log(user1.getCardByKey(1));
+//
+// const user1card1 = user1.getCardByKey(1);
+// const user1card2 = user1.getCardByKey(2);
+// user1card1.putCredits(500);
+// user1card1.setTransactionLimit(800);
+// user1card1.transferCredits(300, user1card2);
+// user1card2.takeCredits(50);
+//
+// console.log(user1card1.getCardOptions());
+// console.log(user1card2.getCardOptions());
+//
+//
+// const user2 = new UserAcaunt("Misha");
+//
+// user2.addCard();
+// user2.addCard();
+//
+// const user2card1 = user2.getCardByKey(1);
+// const user2card2 = user2.getCardByKey(2);
+//
+// console.log(user2card1.getCardOptions());
+// console.log(user2card2.getCardOptions());
+//
+// user1.addCard();
+//
+// const user1card3 = user1.getCardByKey(3);
+// console.log(user1card3.getCardOptions());
 
