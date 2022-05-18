@@ -68,23 +68,46 @@
 // // c) пройтись по ньому та додати кожному юзеру поле id - яке характеризує унікальний індентифікатор
 // // (По якому принципу його створювати - ваше рішення),
 // // та зберегти це в новий масив (первинний масив залишиться без змін)
+//
 // let userId = 1;
 //
-// const users2 = users.slice(0);
-// users2.map(value => {
-//     value.id = userId;
+// const users2 = users.reduce(function (newArr,objectArr){
+//     objectArr.id = userId;
 //     userId++;
-// })
+//     newArr.push(objectArr);
+//     return newArr;
+// }, []);
 //
 // console.log(users2);
 //
+//
+// // const users2 = users.slice(0);
+// // users2.map(value => {
+// //     value.id = userId;
+// //     userId++;
+// // })
+// //
+// // console.log(users2);
+//
 // // d) відсортувати його за індентифікатором
 // console.log(users2.sort((a, b) => a.id - b.id));
+// //
+// // // e) Всі хто одружений мають попасти у новий масив та отрмати квартиру (reduce)
 //
-// // e) Всі хто одружений мають попасти у новий масив та отрмати квартиру (reduce)
-// const users3 = users2.filter(value => value.isMarried === true)
-// users3.map(value => value.appart = true);
+// const users3 = users2.reduce(function (newArr, objArr){
+//     if(objArr.isMarried){
+//         objArr.appart = true;
+//         newArr.push(objArr);
+//     }
+//     return newArr;
+// }, [])
+//
 // console.log(users3);
+//
+//
+// // const users3 = users2.filter(value => value.isMarried === true)
+// // users3.map(value => value.appart = true);
+// // console.log(users3);
 
 
 
@@ -202,6 +225,16 @@ console.log(usersWithAddress.reduce((previousValue, currentValue) => previousVal
 
 // -- Ті, хто одружений і старий за 30 має отримати обєкти child і попасти в новий масив (reduce)
 
+const usersWithAddress2 = usersWithAddress.reduce(((previousValue, currentValue) => {
+    if(currentValue.isMarried === true && currentValue.age >= 30){
+        currentValue.child = true;
+        previousValue.push(currentValue);
+    }
+    return previousValue;
+}),[]);
+
+console.log(usersWithAddress2);
+
 
 //
 //
@@ -223,14 +256,19 @@ console.log(usersWithAddress.reduce((previousValue, currentValue) => previousVal
 //     Також спробуйте порахувати суму, яку потрібно потратити для покупки всіх цих авто в циклі
 //
 //
-// Задача: дан отсортированный по возрастанию массив целых чисел.
-//     Необходимо вернуть наименьший и наибольший индекс заданного элемента.
-//     Входные данные: arr — массив целых чисел значения которых по модулю не больше 10. Размер массива не более 10 элементов.
-//     Вывод: наибольший и наименьший индекс в массиве заданного элемента. Если такого элемента нет в массиве, выведите -1.
-//
-// Пример:
+// // Задача: дан отсортированный по возрастанию массив целых чисел.
+// //     Необходимо вернуть наименьший и наибольший индекс заданного элемента.
+// //     Входные данные: arr — массив целых чисел значения которых по модулю не больше 10. Размер массива не более 10 элементов.
+// //     Вывод: наибольший и наименьший индекс в массиве заданного элемента. Если такого элемента нет в массиве, выведите -1.
+// //
+// // Пример:
 //     Arr = [1, 2, 3, 4, 4, 4, 4, 7, 7, 9, 14]
-// 1. Key = 1
-// Answer: MinIndex = 0, MaxIndex = 0.
-// 2. Key = 4
-// Answer: MinIndex = 3, MaxIndex = 6.
+// // 1. Key = 1
+// // Answer: MinIndex = 0, MaxIndex = 0.
+// // 2. Key = 4
+// // Answer: MinIndex = 3, MaxIndex = 6.
+//
+// const minAndMaxIndexInArray = (array, numberFind) =>`MinIndex = ${array.indexOf(numberFind)}, MaxIndex = ${array.lastIndexOf(numberFind)}`;
+//
+// console.log(minAndMaxIndexInArray(Arr, 4));
+
