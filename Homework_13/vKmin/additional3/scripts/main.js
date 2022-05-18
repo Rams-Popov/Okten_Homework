@@ -1,6 +1,40 @@
 // - Створити довільний елемент с id = text. використовуючи JavaScript, зробіть так, щоб при кліку на кнопку зникавл елемент с id="text".
+// const div1 = document.createElement('div');
+// const button1 = document.createElement('input');
+//
+// div1.style.width = "200px";
+// div1.style.height = "200px";
+// div1.style.border = "solid red 2px";
+//
+// button1.setAttribute("type", "button");
+// button1.value = "PUSH ME";
+// button1.onclick = () =>{
+//     const element = document.getElementsByTagName("div")[0];
+//     console.log(element);
+//     element.classList.toggle("some-class");
+// }
+//
+// document.body.append(div1, button1);
+
+
 //     - Створіть кнопку, при кліку на яку, вона буде приховувати сама себе.
+// const button2 = document.createElement('input');
+//
+// button2.setAttribute("type", "button");
+// button2.value = "PUSH ME";
+//
+// button2.onclick = () =>{
+//     const element = document.getElementsByTagName("input")[0];
+//     console.log(element);
+//     element.classList.toggle("some-class");
+// }
+//
+// document.body.append(button2);
+
 // - Створити інпут який приймає вік людини та кнопку яка підтверджує дію.
+
+
+
 //     При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи менше він ніж 18, та повідомити про це користувача
 // - Створіть меню, яке розгортається/згортається при клику
 // - Створіть список коментарів , приклад об'єкту коментаря - {title : 'lorem', body:'lorem ipsum dolo sit ameti'}.

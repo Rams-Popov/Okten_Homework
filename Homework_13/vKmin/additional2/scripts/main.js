@@ -148,7 +148,7 @@ class GamePc extends StandardPc{
         if(this.RAM < 8 && this.powerCPU < 500){
             return 'You cant play on this bucket!'
         }
-        this.FPS *= 0.99;
+        this.FPS = Math.round(this.FPS * 0.99);
         return `You are playing ${nameGame} with ${this.FPS} FSP`;
     }
 }
