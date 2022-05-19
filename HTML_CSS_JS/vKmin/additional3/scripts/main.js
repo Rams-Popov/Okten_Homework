@@ -11,7 +11,7 @@
 // button1.onclick = () =>{
 //     const element = document.getElementsByTagName("div")[0];
 //     console.log(element);
-//     element.classList.toggle("some-class");
+//     element.classList.toggle("hide");
 // }
 //
 // document.body.append(div1, button1);
@@ -26,17 +26,40 @@
 // button2.onclick = () =>{
 //     const element = document.getElementsByTagName("input")[0];
 //     console.log(element);
-//     element.classList.toggle("some-class");
+//     element.classList.toggle("hide");
 // }
 //
 // document.body.append(button2);
 
 // - Створити інпут який приймає вік людини та кнопку яка підтверджує дію.
+//     При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи менше він ніж 18,
+//     та повідомити про це користувача
+
+// const input1 = document.createElement("input");
+// const button3 = document.createElement("input");
+//
+// input1.type = "text";
+//
+// button3.type = "button";
+// button3.value = "Send";
+//
+// document.body.append(input1, button3);
+//
+// button3.onclick = () =>{
+//     const age = input1.value;
+//     if(+age < 18){
+//         alert("Your age is less than 18")
+//     }else{
+//         alert("Go to the site!")
+//     }
+//     input1.value = "";
+// }
 
 
-
-//     При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи менше він ніж 18, та повідомити про це користувача
 // - Створіть меню, яке розгортається/згортається при клику
+
+
+
 // - Створіть список коментарів , приклад об'єкту коментаря - {title : 'lorem', body:'lorem ipsum dolo sit ameti'}.
 // Вивести список коментарів в документ, кожний в своєму блоці.
 //     Додайте кожному коментарю по кнопці для згортання його body.
@@ -85,3 +108,4 @@
 // 2й - залишає старших 29 років включно
 // 3й - залишає тих в кого місто Київ
 // Дані виводить в документ
+
