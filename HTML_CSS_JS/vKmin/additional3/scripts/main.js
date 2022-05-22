@@ -32,6 +32,9 @@
 // document.body.append(button2);
 
 // - Створити інпут який приймає вік людини та кнопку яка підтверджує дію.
+<<<<<<<< HEAD:HTML CSS JS/vKmin/additional3/scripts/main.js
+//     При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи менше він ніж 18, та повідомити про це користувача
+========
 //     При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи менше він ніж 18,
 //     та повідомити про це користувача
 
@@ -56,6 +59,7 @@
 // }
 
 
+>>>>>>>> origin/master:HTML_CSS_JS/vKmin/additional3/scripts/main.js
 // - Створіть меню, яке розгортається/згортається при клику
 
 
@@ -77,7 +81,7 @@
 // РОБОТА В АУДИТОРІЇ
 // ______________________________________________________________________________________________________________________________________________________
 //
-//
+
 // - Сворити масив нецензцрних слів.
 //     Сворити інпут текстового типу.
 //     Якщо людина вводить слово і воно міститься в масиві нецензурних слів кинути алерт з попередженням.
@@ -87,6 +91,29 @@
 //     Потрібно перевіряти чи не містить ціле речення в собі погані слова.
 //     Кинути алерт з попередженням у випадку якщо містить.
 //     Перевірку робити при натисканні на кнопку
+
+// const badArray = ["курва", "блядь", "шалава"];
+
+// const input5 = document.createElement("input");
+// const button5 = document.createElement("input");
+//
+// button5.type = "button";
+// button5.value = "cheker";
+//
+// document.body.append(input5, button5);
+//
+// button5.onclick = () =>{
+//     const arrayValue = input5.value.split(" ");
+//     for (const string of arrayValue) {
+//         if(badArray.find(value => value === string.toLocaleLowerCase())){
+//             alert("Містить погані слова");
+//         }
+//     }
+//     input5.value = "";
+// }
+
+
+
 // -- Створити скрипт, котрий бере зчитує на сторінці (rules.html) текст і робить збоку меню-зміст по всіх заголовках які є в тексті.
 //     При кліку на пункт заголовку ви маєте відправлятись  до цього пункту в тексті
 // -- Взяти масив юзерів
@@ -103,9 +130,61 @@
 //     {id: 7, name: 'olya', age: 31, isMarried: false, address: {city: 'Lviv', street: 'Naukova', number: 16}},
 //     {id: 11, name: 'max', age: 31, isMarried: true, address: {city: 'Rivne', street: 'Ivana Franka', number: 121}}
 // ];
+<<<<<<<< HEAD:HTML CSS JS/vKmin/additional3/scripts/main.js
+// // Створити три чекбокси. Кожний з них активує фільтр для вищевказаного масиву. Фільтри можуть працювати як разом так і окремо.
+// // 1й - відфільтровує юзерів зі статусом false (залишає зі статусом false)
+// // 2й - залишає старших 29 років включно
+// // 3й - залишає тих в кого місто Київ
+// // Дані виводить в документ
+// const createBloks = (array) =>{
+//     const ownBlock = document.createElement("div");
+//     ownBlock.classList.add("myClass")
+//
+//     for (const user of array) {
+//         const div = document.createElement("div");
+//         for (const userKey in user) {
+//             if(userKey === "address"){
+//                 console.log(userKey);
+//                 for (const keys in user[userKey]) {
+//                     div.innerText += ` ${keys.toUpperCase()}: ${user[userKey][keys]}, `;
+//                 }
+//             }else {
+//                 div.innerText += ` ${userKey.toUpperCase()}: ${user[userKey]}, `;
+//             }
+//         }
+//         ownBlock.appendChild(div);
+//     }
+//
+//     document.body.appendChild(ownBlock);
+// }
+//
+// createBloks(usersWithAddress);
+//
+//
+// const checkboks1 = document.createElement("input");
+// checkboks1.type = "checkbox";
+// document.body.appendChild(checkboks1);
+//
+// // checkboks1.addEventListener("click", () => {
+// //     if(checkboks1.checked){
+// //         console.log("123")
+// //     }
+// // })
+//
+// checkboks1.onclick = () =>{
+//     if(checkboks1.checked){
+//
+//
+//         usersWithAddress.filter(value => value.isMarried === false)
+//     } else {
+//
+//     }
+// }
+========
 // Створити три чекбокси. Кожний з них активує фільтр для вищевказаного масиву. Фільтри можуть працювати як разом так і окремо.
 // 1й - відфільтровує юзерів зі статусом false (залишає зі статусом false)
 // 2й - залишає старших 29 років включно
 // 3й - залишає тих в кого місто Київ
 // Дані виводить в документ
+>>>>>>>> origin/master:HTML_CSS_JS/vKmin/additional3/scripts/main.js
 
