@@ -92,7 +92,11 @@ const button4 = document.createElement('input');
 button4.type = "button";
 button4.value = "Click";
 
-document.body.append(input5, input6, input7, button4);
+const buttonDelete = document.createElement('input');
+buttonDelete.type = "button";
+buttonDelete.value = "Delete All Table";
+
+document.body.append(input5, input6, input7, button4, buttonDelete);
 
 button4.onclick = () =>{
     if(isNaN(+input5.value) || isNaN(+input6.value)){
@@ -100,6 +104,8 @@ button4.onclick = () =>{
         [input6.value, input5.value, input7.value] = ["", "", ""];
         return;
     }
+
+    const table = document.createElement("div");
 
     for (let i = 0; i < +input5.value; i++) {
         const divRow = document.createElement("div");
@@ -114,10 +120,20 @@ button4.onclick = () =>{
 
         divRow.style.display = "flex";
         divRow.style.border = "solid red 2px";
-        document.body.appendChild(divRow);
+
+        table.classList.add("table")
+        table.appendChild(divRow)
+        document.body.appendChild(table);
     }
 
     [input6.value, input5.value, input7.value] = ["", "", ""];
+}
+
+buttonDelete.onclick = () =>{
+    const allDiv = document.getElementsByClassName("table");
+    for (let i = allDiv.length - 1; i > -1; i--) {
+        allDiv[i].remove();
+    }
 }
 
 // (Додатковачастина для завдання)

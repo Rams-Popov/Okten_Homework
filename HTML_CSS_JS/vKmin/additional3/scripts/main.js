@@ -32,9 +32,9 @@
 // document.body.append(button2);
 
 // - Створити інпут який приймає вік людини та кнопку яка підтверджує дію.
-<<<<<<<< HEAD:HTML CSS JS/vKmin/additional3/scripts/main.js
+// <<<<<<<< HEAD:HTML CSS JS/vKmin/additional3/scripts/main.js
 //     При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи менше він ніж 18, та повідомити про це користувача
-========
+// ========
 //     При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи менше він ніж 18,
 //     та повідомити про це користувача
 
@@ -59,7 +59,7 @@
 // }
 
 
->>>>>>>> origin/master:HTML_CSS_JS/vKmin/additional3/scripts/main.js
+// >>>>>>>> origin/master:HTML_CSS_JS/vKmin/additional3/scripts/main.js
 // - Створіть меню, яке розгортається/згортається при клику
 
 
@@ -130,7 +130,7 @@
 //     {id: 7, name: 'olya', age: 31, isMarried: false, address: {city: 'Lviv', street: 'Naukova', number: 16}},
 //     {id: 11, name: 'max', age: 31, isMarried: true, address: {city: 'Rivne', street: 'Ivana Franka', number: 121}}
 // ];
-<<<<<<<< HEAD:HTML CSS JS/vKmin/additional3/scripts/main.js
+// <<<<<<<< HEAD:HTML CSS JS/vKmin/additional3/scripts/main.js
 // // Створити три чекбокси. Кожний з них активує фільтр для вищевказаного масиву. Фільтри можуть працювати як разом так і окремо.
 // // 1й - відфільтровує юзерів зі статусом false (залишає зі статусом false)
 // // 2й - залишає старших 29 років включно
@@ -180,11 +180,11 @@
 //
 //     }
 // }
-========
+// ========
 // Створити три чекбокси. Кожний з них активує фільтр для вищевказаного масиву. Фільтри можуть працювати як разом так і окремо.
 // 1й - відфільтровує юзерів зі статусом false (залишає зі статусом false)
 // 2й - залишає старших 29 років включно
 // 3й - залишає тих в кого місто Київ
 // Дані виводить в документ
->>>>>>>> origin/master:HTML_CSS_JS/vKmin/additional3/scripts/main.js
+// >>>>>>>> origin/master:HTML_CSS_JS/vKmin/additional3/scripts/main.js
 
