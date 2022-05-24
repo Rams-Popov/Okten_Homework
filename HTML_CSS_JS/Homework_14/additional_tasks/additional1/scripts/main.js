@@ -8,10 +8,9 @@
 // const badArray = ["курва", "блядь", "шалава"];
 //
 // const input1 = document.createElement("input");
-// const button1 = document.createElement("input");
+// const button1 = document.createElement("button");
 //
-// button1.type = "button";
-// button1.value = "Checker";
+// button1.innerText = "Checker";
 //
 // document.body.append(input1, button1);
 //
@@ -35,10 +34,9 @@
 // const badArray = ["курва", "блядь", "шалава"];
 //
 // const input2 = document.createElement("input");
-// const button2 = document.createElement("input");
+// const button2 = document.createElement("button");
 //
-// button2.type = "button";
-// button2.value = "Checker";
+// button2.innerText = "Checker";
 //
 // document.body.append(input2, button2);
 //
@@ -57,28 +55,20 @@
 //
 // const someList = ["One", "Two", "Three", "Four", "Five"];
 //
+// const title = document.createElement("h3");
+// title.innerText = "Numbers";
+//
 // const ul1 = document.createElement("ul");
 //
 // for (const elementList of someList) {
 //     const li1 = document.createElement("li");
 //     li1.innerText = elementList;
-//     // li1.classList.add("hide2")
 //     ul1.appendChild(li1);
 // }
 //
-// const showMenu = document.createElement("input");
-// showMenu.type = "button";
-// showMenu.value = "Hide Menu";
+// title.onclick = () => ul1.classList.toggle("hide2");
 //
-// showMenu.onclick = () =>{
-//     ul1.classList.toggle("hide2");
-//     if(showMenu.value === "Hide Menu"){
-//         showMenu.value = "Show Menu";
-//     } else {
-//         showMenu.value = "Hide Menu";
-//     }
-// }
-// document.body.append(ul1, showMenu);
+// document.body.append(title, ul1);
 
 //
 // - Создать список комментариев , пример объекта коментария - {title : 'lorem', body:'lorem ipsum dolo sit ameti'}.
@@ -99,13 +89,12 @@
 //     const div = document.createElement("div");
 //     const h = document.createElement("h3");
 //     const p = document.createElement("p");
-//     const button = document.createElement("input");
+//     const button = document.createElement("button");
 //
 //     h.innerText = coment.title;
 //     p.innerText = coment.body;
 //
-//     button.type = "button";
-//     button.value = "Hide comment";
+//     button.innerText = "Hide comment";
 //
 //     button.onclick = () =>{
 //         p.classList.toggle("hide2");
@@ -122,25 +111,43 @@
 // }
 
 // - Создайте кнопку, при клике на которую, она будет скрывать сама себя.
-// const buttonHide = document.createElement('input');
+// const buttonHide = document.createElement('button');
 //
-// buttonHide.setAttribute("type", "button");
-// buttonHide.value = "HIDE ME";
+// buttonHide.innerText = "HIDE ME";
 //
 // buttonHide.onclick = () =>{
-//     const element = document.getElementsByTagName("input")[0];
+//     const element = document.getElementsByTagName("button")[0];
 //     element.classList.toggle("hide");
 // }
 //
 // document.body.append(buttonHide);
-//
+
 
 //
 //
 // - Описати скріпт, котрий, якщо доєднати до будь-якої сторінки дозволить зробити наступне:
 //     При лівому кліку миші вивести в консоль інформацію про блок або елемент на який відбувся клік.
 //     Інформація яку потрібно вивести: Назва тегу, список класів, список ід, розміри в форматі висота*ширина
-//
+
+const allClasses = [];
+
+const findAllClasses = (where) =>{
+    const element = where.children;
+    for (const el of element) {
+        if (el.children.length === 0){
+            el.onclick = (e) =>{
+                console.log(e);
+            }
+
+        } else{
+                findAllClasses(el);
+        }
+    }
+
+}
+
+findAllClasses(document.body);
+
 // - Описати скріпт, котрий, якщо доєднати до будь-якої сторінки дозволить зробити наступне:
 //     При лівому кліку миші  зробить popup (спливаючий блок) в якому буде вся інформація про блок.
 //     Інформація яку потрібно вивести в popup: Назва тегу, список класів, список ід, розміри в форматі висота*ширина
