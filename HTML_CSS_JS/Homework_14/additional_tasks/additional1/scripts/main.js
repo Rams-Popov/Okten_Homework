@@ -5,7 +5,7 @@
 // кинути алерт з попередженням.
 //     Перевірку робити при натисканні на кнопку
 //
-// const badArray = ["курва", "блядь", "шалава"];
+// const badArray = ["badWord1", "badWord2", "badWord3"];
 //
 // const input1 = document.createElement("input");
 // const button1 = document.createElement("button");
@@ -31,7 +31,7 @@
 //     Перевірку робити при натисканні на кнопку
 //
 //
-// const badArray = ["курва", "блядь", "шалава"];
+// const badArray = ["badWord1", "badWord2", "badWord3"];
 //
 // const input2 = document.createElement("input");
 // const button2 = document.createElement("button");
@@ -123,35 +123,75 @@
 // document.body.append(buttonHide);
 
 
-//
-//
 // - Описати скріпт, котрий, якщо доєднати до будь-якої сторінки дозволить зробити наступне:
 //     При лівому кліку миші вивести в консоль інформацію про блок або елемент на який відбувся клік.
 //     Інформація яку потрібно вивести: Назва тегу, список класів, список ід, розміри в форматі висота*ширина
-
-const allClasses = [];
-
-const findAllClasses = (where) =>{
-    const element = where.children;
-    for (const el of element) {
-        if (el.children.length === 0){
-            el.onclick = (e) =>{
-                console.log(e);
-            }
-
-        } else{
-                findAllClasses(el);
-        }
-    }
-
-}
-
-findAllClasses(document.body);
+//
+// const findAllClasses = (where) =>{
+//     const element = where.children;
+//     for (const el of element) {
+//         if (el.children.length === 0){
+//             el.onclick = (e) =>{
+//                 console.log(`Tag Name: ${e.target.localName}`);
+//                 console.log(`Array Classes: ${e.target.classList}`);
+//                 console.log(`ID: ${e.target.id}`);
+//                 console.log(`Height x Width: ${e.target.clientHeight} x ${e.target.clientWidth}`);
+//             }
+//
+//         } else{
+//                 findAllClasses(el);
+//         }
+//     }
+//
+// }
+//
+// findAllClasses(document.body);
 
 // - Описати скріпт, котрий, якщо доєднати до будь-якої сторінки дозволить зробити наступне:
 //     При лівому кліку миші  зробить popup (спливаючий блок) в якому буде вся інформація про блок.
 //     Інформація яку потрібно вивести в popup: Назва тегу, список класів, список ід, розміри в форматі висота*ширина
 //
+// const findAllClasses = (where) =>{
+//     const element = where.children;
+//     for (const el of element) {
+//         if (el.children.length === 0){
+//             el.onclick = (e) =>{
+//                 if(e.target.children.length === 0) {
+//
+//                     const div = document.createElement("div");
+//                     const p = document.createElement("p");
+//                     const buttonClose = document.createElement("button");
+//
+//                     p.innerText = `Tag Name: ${e.target.localName}
+//                                    Array Classes: ${e.target.classList}
+//                                    ID: ${e.target.id}
+//                                    Height x Width: ${e.target.clientHeight} x ${e.target.clientWidth}`
+//
+//                     buttonClose.onclick = () => div.remove();
+//                     buttonClose.innerText = "Close";
+//
+//                     div.id = "popup";
+//                     div.style.fontSize = "14px";
+//                     div.style.fontWeight = "400";
+//                     div.style.border = "2px solid red";
+//                     div.style.width = "300px"
+//                     div.style.textAlign = "center";
+//
+//                     div.append(p, buttonClose);
+//                     e.target.appendChild(div);
+//                 }
+//             }
+//
+//         } else{
+//             findAllClasses(el);
+//         }
+//     }
+//
+// }
+//
+// findAllClasses(document.body);
+
+
 // -- взять массив пользователей
 let usersWithAddress = [
     {id:1,name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
@@ -172,7 +212,7 @@ let usersWithAddress = [
 // 3й - оставляет тех у кого город киев
 // Данные выводить в документ
 //
-let usersWithAddressCopy = [];
+let usersWithAddressCopy;
 
 const ownDiv = document.createElement("div");
 
