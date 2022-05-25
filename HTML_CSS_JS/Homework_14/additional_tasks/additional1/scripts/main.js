@@ -212,7 +212,7 @@ let usersWithAddress = [
 // 3й - оставляет тех у кого город киев
 // Данные выводить в документ
 //
-let usersWithAddressCopy;
+let usersWithAddressCopy = [];
 
 const ownDiv = document.createElement("div");
 
@@ -239,24 +239,83 @@ document.body.appendChild(filterAge);
 document.body.appendChild(filterCity);
 
 const filterUser = (array) =>{
+
     ownDiv.innerText = "";
-    for (const user of array) {
-        const userDiv = document.createElement("div");
-        userDiv.innerText = `${user.name}, ${user.age}`;
-        ownDiv.appendChild(userDiv);
+    if(usersWithAddressCopy.length === 0){
+        usersWithAddressCopy = usersWithAddressCopy.concat(array);
+        console.log(usersWithAddressCopy)
+        for (const user of usersWithAddressCopy) {
+            const userDiv = document.createElement("div");
+            userDiv.innerText = `${user.name}, ${user.age}`;
+            ownDiv.appendChild(userDiv);
+        }
+    } else{
+        usersWithAddressCopy = usersWithAddressCopy.filter( el => array.indexOf( el ) > -1 );
+        for (const user of usersWithAddressCopy) {
+            const userDiv = document.createElement("div");
+            userDiv.innerText = `${user.name}, ${user.age}`;
+            ownDiv.appendChild(userDiv);
     }
+
+
+    // for (const showArray of usersWithAddressCopy) {
+    //     const userDiv = document.createElement("div");
+    //     userDiv.innerText = `${user.name}, ${user.age}`;
+    //     ownDiv.appendChild(userDiv);
+    }
+
 }
 
+//
+var arr1 = [0,1,2,3,4,5];
+var arr2 = [0,4,6,1,3,9];
+function getArrDifference(arr1, arr2) {
+    return arr1.concat(arr2).filter(function(v, i, arr) {
+        return arr.indexOf(v) === arr.lastIndexOf(v);
+    });
+}
+console.log(getArrDifference(arr1,arr2));
+//
+
+const one = ['one', 'two', 'three', 'four', 'five']
+const two = ['a', 'b', 'five', 'c', 'one']
+matched = one.filter( el => two.indexOf( el ) > -1 );
+console.log(matched);
+//
 // const filtersArray = document.getElementsByTagName("input");
 
 filterStatus.onclick = () =>{
+    const arrayFilterStatus = usersWithAddress.filter(value => value.status === false);
     if(filterStatus.checked){
-        usersWithAddressCopy = usersWithAddress.filter(value => value.status === false);
-        filterUser(usersWithAddressCopy);
+        filterUser(arrayFilterStatus);
+    } else {
+        filterUser(usersWithAddress);
+        // const returnFilterArray = usersWithAddressCopy.concat(arrayFilterStatus).filter((v, i, arr) =>{
+        //     return arr.indexOf(v) === arr.lastIndexOf(v);
+        // })
+        const returnFilterArray = usersWithAddressCopy.concat(arrayFilterStatus)
+        console.log(returnFilterArray)
+    }
+}
+
+filterAge.onclick = () =>{
+    if(filterAge.checked){
+        const arrayFilterAge = usersWithAddress.filter(value => value.age >= 29);
+        filterUser(arrayFilterAge);
     } else {
         filterUser(usersWithAddress);
     }
 }
+
+filterCity.onclick = () =>{
+    const arrayFilterCity = usersWithAddress.filter(value => value.address.city === "Kyiv");
+    if(filterCity.checked){
+        filterUser(arrayFilterCity);
+    } else {
+        filterUser(usersWithAddress);
+    }
+}
+
 
 
 //
