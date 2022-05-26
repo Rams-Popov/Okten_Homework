@@ -341,7 +341,16 @@ const div = document.createElement("div");
 div.innerText = "fghjk";
 
 document.body.appendChild(div);
+const div1 = document.createElement("div");
 
-div.onmousedown = (e) =>{
+div1.innerText = "fdrgxgrk";
+
+document.body.appendChild(div1);
+
+
+document.querySelector("*").onmouseup = function() {
+        const selected_text = window.getSelection();
+        console.log(selected_text);
 
 }
+
