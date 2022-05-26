@@ -212,109 +212,115 @@ let usersWithAddress = [
 // 3й - оставляет тех у кого город киев
 // Данные выводить в документ
 //
-let usersWithAddressCopy = [];
-
-const ownDiv = document.createElement("div");
-
-ownDiv.classList.add("users");
-
-for (const user of usersWithAddress) {
-    const userDiv = document.createElement("div");
-    userDiv.innerText = `${user.name}, ${user.age}`;
-    ownDiv.appendChild(userDiv);
-}
-
-document.body.appendChild(ownDiv);
-
-const filterStatus = document.createElement("input");
-const filterAge = document.createElement("input");
-const filterCity = document.createElement("input");
-
-filterStatus.type = "checkbox";
-filterAge.type = "checkbox";
-filterCity.type = "checkbox";
-
-document.body.appendChild(filterStatus);
-document.body.appendChild(filterAge);
-document.body.appendChild(filterCity);
-
-const filterUser = (array) =>{
-
-    ownDiv.innerText = "";
-    if(usersWithAddressCopy.length === 0){
-        usersWithAddressCopy = usersWithAddressCopy.concat(array);
-        console.log(usersWithAddressCopy)
-        for (const user of usersWithAddressCopy) {
-            const userDiv = document.createElement("div");
-            userDiv.innerText = `${user.name}, ${user.age}`;
-            ownDiv.appendChild(userDiv);
-        }
-    } else{
-        usersWithAddressCopy = usersWithAddressCopy.filter( el => array.indexOf( el ) > -1 );
-        for (const user of usersWithAddressCopy) {
-            const userDiv = document.createElement("div");
-            userDiv.innerText = `${user.name}, ${user.age}`;
-            ownDiv.appendChild(userDiv);
-    }
-
-
-    // for (const showArray of usersWithAddressCopy) {
-    //     const userDiv = document.createElement("div");
-    //     userDiv.innerText = `${user.name}, ${user.age}`;
-    //     ownDiv.appendChild(userDiv);
-    }
-
-}
-
+// let usersWithAddressCopy = [];
 //
-var arr1 = [0,1,2,3,4,5];
-var arr2 = [0,4,6,1,3,9];
-function getArrDifference(arr1, arr2) {
-    return arr1.concat(arr2).filter(function(v, i, arr) {
-        return arr.indexOf(v) === arr.lastIndexOf(v);
-    });
-}
-console.log(getArrDifference(arr1,arr2));
+// const ownDiv = document.createElement("div");
 //
-
-const one = ['one', 'two', 'three', 'four', 'five']
-const two = ['a', 'b', 'five', 'c', 'one']
-matched = one.filter( el => two.indexOf( el ) > -1 );
-console.log(matched);
+// ownDiv.classList.add("users");
 //
-// const filtersArray = document.getElementsByTagName("input");
+// for (const user of usersWithAddress) {
+//     const userDiv = document.createElement("div");
+//     userDiv.innerText = `${user.name}, ${user.age}`;
+//     ownDiv.appendChild(userDiv);
+// }
+//
+// document.body.appendChild(ownDiv);
+//
+// const filterStatus = document.createElement("input");
+// const filterAge = document.createElement("input");
+// const filterCity = document.createElement("input");
+//
+// filterStatus.type = "checkbox";
+// filterAge.type = "checkbox";
+// filterCity.type = "checkbox";
+//
+// document.body.appendChild(filterStatus);
+// document.body.appendChild(filterAge);
+// document.body.appendChild(filterCity);
+//
+// const createUser = (array) =>{
+//     for (const user of array) {
+//         const userDiv = document.createElement("div");
+//         userDiv.innerText = `${user.name}, ${user.age}`;
+//         ownDiv.appendChild(userDiv);
+//     }
+// }
+//
+// const filterUser = (array) =>{
+//
+//     ownDiv.innerText = "";
+//     if(usersWithAddressCopy.length === 0){
+//         usersWithAddressCopy = usersWithAddressCopy.concat(array);
+//         console.log(usersWithAddressCopy);
+//         createUser(usersWithAddressCopy);
+//         } else{
+//
+//         usersWithAddressCopy = usersWithAddressCopy.filter( el => array.indexOf( el ) > -1 );
+//         if(usersWithAddressCopy === array){
+//             console.log(1)
+//         }
+//         console.log(array);
+//         createUser(usersWithAddressCopy);
+//     }
+//
+//
+//     // for (const showArray of usersWithAddressCopy) {
+//     //     const userDiv = document.createElement("div");
+//     //     userDiv.innerText = `${user.name}, ${user.age}`;
+//     //     ownDiv.appendChild(userDiv);
+//
+//
+// }
 
-filterStatus.onclick = () =>{
-    const arrayFilterStatus = usersWithAddress.filter(value => value.status === false);
-    if(filterStatus.checked){
-        filterUser(arrayFilterStatus);
-    } else {
-        filterUser(usersWithAddress);
-        // const returnFilterArray = usersWithAddressCopy.concat(arrayFilterStatus).filter((v, i, arr) =>{
-        //     return arr.indexOf(v) === arr.lastIndexOf(v);
-        // })
-        const returnFilterArray = usersWithAddressCopy.concat(arrayFilterStatus)
-        console.log(returnFilterArray)
-    }
-}
-
-filterAge.onclick = () =>{
-    if(filterAge.checked){
-        const arrayFilterAge = usersWithAddress.filter(value => value.age >= 29);
-        filterUser(arrayFilterAge);
-    } else {
-        filterUser(usersWithAddress);
-    }
-}
-
-filterCity.onclick = () =>{
-    const arrayFilterCity = usersWithAddress.filter(value => value.address.city === "Kyiv");
-    if(filterCity.checked){
-        filterUser(arrayFilterCity);
-    } else {
-        filterUser(usersWithAddress);
-    }
-}
+// //
+// // const filtersArray = document.getElementsByTagName("input");
+//
+// filterStatus.onclick = () =>{
+//     const arrayFilterStatus = usersWithAddress.filter(value => value.status === false);
+//     if(filterStatus.checked){
+//         filterUser(arrayFilterStatus);
+//     } else {
+//         let returnFilterArray = usersWithAddressCopy.concat(arrayFilterStatus).filter((v, i, arr) =>{
+//             return arr.indexOf(v) === arr.lastIndexOf(v);
+//         })
+//         if(returnFilterArray.length === 0){
+//             returnFilterArray = usersWithAddress.slice(0)
+//         }
+//         filterUser(returnFilterArray);
+//     }
+// }
+//
+// filterAge.onclick = () =>{
+//     const arrayFilterAge = usersWithAddress.filter(value => value.age >= 29);
+//     if(filterAge.checked){
+//         filterUser(arrayFilterAge);
+//     } else {
+//         let returnFilterArray = usersWithAddressCopy.concat(arrayFilterAge).filter((v, i, arr) =>{
+//             return arr.indexOf(v) === arr.lastIndexOf(v);
+//         })
+//
+//         if(returnFilterArray.length === 0){
+//             returnFilterArray = usersWithAddress.slice(0)
+//         }
+//         filterUser(returnFilterArray);
+//     }
+// }
+//
+// filterCity.onclick = () =>{
+//     const arrayFilterCity = usersWithAddress.filter(value => value.address.city === "Kyiv");
+//     if(filterCity.checked){
+//         filterUser(arrayFilterCity);
+//     } else {
+//         let returnFilterArray = usersWithAddressCopy.concat(arrayFilterCity).filter((v, i, arr) =>{
+//             return arr.indexOf(v) === arr.lastIndexOf(v);
+//         })
+//
+//         if(returnFilterArray.length === 0){
+//             returnFilterArray = usersWithAddress.slice(0)
+//         }
+//         filterUser(returnFilterArray);
+//     }
+// }
 
 
 
@@ -329,3 +335,13 @@ filterCity.onclick = () =>{
 //
 //     Завдання важке для розуміння, але дуже легке в реалізації. Тут треба буде погуглити
 // *** При виділені сегменту тексту на сторінці він стає жирний/курсивний/або якось іншим способом змінює свій стан
+
+const div = document.createElement("div");
+
+div.innerText = "fghjk";
+
+document.body.appendChild(div);
+
+div.onmousedown = (e) =>{
+
+}
