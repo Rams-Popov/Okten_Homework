@@ -42,7 +42,21 @@ send2.innerText = "Send2";
 formTwo.append(inputModel, inputType, inputVolume, send2);
 document.body.appendChild(formTwo);
 
+
 send2.addEventListener("click",()=>{
     const objectUser = {model: inputModel.value, type: inputType.value, volume: inputVolume.value};
-    localStorage.setItem("user", JSON.stringify(objectUser));
+
+    if(!localStorage.getItem("cars")){
+        localStorage.setItem("cars", JSON.stringify([objectUser]));
+    }else {
+        const storageArray = JSON.parse(localStorage.getItem("cars"));
+
+        storageArray.push(objectUser);
+
+        localStorage.setItem("cars", JSON.stringify(storageArray));
+    }
 })
+
+
+
+
