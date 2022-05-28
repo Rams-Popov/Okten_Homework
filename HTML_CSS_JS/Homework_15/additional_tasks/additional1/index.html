@@ -7,54 +7,56 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        .hide{
-            opacity: 0;
+        .btn {
+            display: inline-block;
+            box-sizing: border-box;
+            padding: 0 25px;
+            margin: 0 15px 15px 0;
+            outline: none;
+            border: 2px solid #fff;
+            border-radius: 50px;
+            height: 46px;
+            line-height: 46px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #444;
+            background-color: orange;
+            box-shadow: 0 4px 6px rgb(204, 21, 21), 0 1px 3px rgb(35, 194, 38);
+            cursor: pointer;
+            user-select: none;
+            appearance: none;
+            touch-action: manipulation;
+            vertical-align: top;
+            transition: box-shadow 0.2s;
         }
-        .hide2{
-            opacity: 0;
-            position: absolute;
+        .btn:focus-visible {
+            border: 1px solid #4c51f9;
+            outline: none;
+        }
+        .btn:hover {
+            transition: all 0.2s;
+            box-shadow: 0 7px 14px rgba(65, 132, 144, 0.68), 0 3px 6px rgb(35, 72, 194);
+        }
+        .btn:active {
+            background-color: #28e8bb;
+        }
+
+        .users{
+            width: 100vw;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .user{
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
         }
     </style>
 </head>
 <body>
-<!--<div class="fghjk" id="content"></div>-->
-<!--<h1>Правила бойцовского клуба</h1>-->
-<!--<div id="wrap">-->
-<!--    <div class="rules rule1">-->
-<!--        <h2 class="rules rule1">Первое правило Бойцовского клуба.</h2>-->
-<!--        <p id="ghj">Никому не рассказывать о Бойцовском клубе.</p>-->
-<!--    </div>-->
-<!--    <div class="rules rule2">-->
-<!--        <h2>Второе правило Бойцовского клуба.</h2>-->
-<!--        <p>Никогда никому не рассказывать о Бойцовском клубе.</p>-->
-<!--    </div>-->
-<!--    <div class="rules rule3">-->
-<!--        <h2>Третье правило Бойцовского клуба.</h2>-->
-<!--        <p>В схватке участвуют только двое.</p>-->
-<!--    </div>-->
-<!--    <div class="rules rule4">-->
-<!--        <h2>Четвертое правило Бойцовского клуба.</h2>-->
-<!--        <p>Не более одного поединка за один раз.</p>-->
-<!--    </div>-->
 
-<!--    <div class="rules rule5">-->
-<!--        <h2>Пятое правило Бойцовского клуба.</h2>-->
-<!--        <p>Бойцы сражаются без обуви и голые по пояс.</p>-->
-<!--    </div>-->
-<!--    <div class="rules rule6">-->
-<!--        <h2>Шестое правило Бойцовского клуба.</h2>-->
-<!--        <p>Поединок продолжается столько, сколько потребуется.</p>-->
-<!--    </div>-->
-<!--    <div class="rules rule7">-->
-<!--        <h2>Седьмое правило Бойцовского клуба.</h2>-->
-<!--        <p>Если противник потерял сознание или делает вид, что потерял, или говорит «Хватит» — поединок-->
-<!--            окончен.</p>-->
-<!--    </div>-->
-<!--    <div class="rules rule8">-->
-<!--        <h2>Восьмое и последнее правило Бойцовского клуба.</h2>-->
-<!--        <p>Новичок обязан принять бой.</p>-->
-<!--    </div>-->
-<!--</div>-->
 <script src="scripts/main.js"></script>
 </body>
 </html>

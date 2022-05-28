@@ -192,136 +192,76 @@
 // findAllClasses(document.body);
 
 
-// -- взять массив пользователей
-let usersWithAddress = [
-    {id:1,name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
-    {id:2,name: 'petya', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 1}},
-    {id:3,name: 'kolya', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}},
-    {id:4,name: 'olya', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 90}},
-    {id:5,name: 'max', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 115}},
-    {id:6,name: 'anya', age: 31, status: false, address: {city: 'Kyiv', street: 'Shevchenko', number: 2}},
-    {id:7,name: 'oleg', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 22}},
-    {id:8,name: 'andrey', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 43}},
-    {id:9,name: 'masha', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 12}},
-    {id:10,name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
-    {id:11,name: 'max', age: 31, status: true, address: {city: 'Ternopil', street: 'Shevchenko', number: 121}}
-];
-// - Создать три чекбокса. Каждый из них активирует фильтр для вышеуказаного массива. Фильтры могут работать как вместе так и по отдельности.
-// 1й - отфильтровывает пользователей со статусом false (осталяет со статусом false)
-// 2й - оставляет старше 29 лет включительно
-// 3й - оставляет тех у кого город киев
-// Данные выводить в документ
+// // -- взять массив пользователей
+// let usersWithAddress = [
+//     {id:1,name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
+//     {id:2,name: 'petya', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 1}},
+//     {id:3,name: 'kolya', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}},
+//     {id:4,name: 'olya', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 90}},
+//     {id:5,name: 'max', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 115}},
+//     {id:6,name: 'anya', age: 31, status: false, address: {city: 'Kyiv', street: 'Shevchenko', number: 2}},
+//     {id:7,name: 'oleg', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 22}},
+//     {id:8,name: 'andrey', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 43}},
+//     {id:9,name: 'masha', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 12}},
+//     {id:10,name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
+//     {id:11,name: 'max', age: 31, status: true, address: {city: 'Ternopil', street: 'Shevchenko', number: 121}}
+// ];
+// // - Создать три чекбокса. Каждый из них активирует фильтр для вышеуказаного массива. Фильтры могут работать как вместе так и по отдельности.
+// // 1й - отфильтровывает пользователей со статусом false (осталяет со статусом false)
+// // 2й - оставляет старше 29 лет включительно
+// // 3й - оставляет тех у кого город киев
+// // Данные выводить в документ
 //
-// let usersWithAddressCopy = [];
+// const createForm = document.createElement("form");
+// createForm.name = "form";
 //
-// const ownDiv = document.createElement("div");
+// const inputStatus =document.createElement("input");
+// const inputCity =document.createElement("input");
+// const inputAge =document.createElement("input");
 //
-// ownDiv.classList.add("users");
+// const usersDiv = document.createElement("div");
+// usersDiv.id = 'content';
 //
-// for (const user of usersWithAddress) {
-//     const userDiv = document.createElement("div");
-//     userDiv.innerText = `${user.name}, ${user.age}`;
-//     ownDiv.appendChild(userDiv);
+// inputStatus.type = "checkbox";
+// inputCity.type = "checkbox";
+// inputAge.type = "checkbox";
+//
+// inputStatus.name = "status";
+// inputCity.name = "city";
+// inputAge.name = "age";
+//
+// createForm.append(inputStatus, inputCity, inputAge);
+// document.body.append(usersDiv, createForm);
+//
+//
+//
+// const content = document.getElementById('content');
+// const form = document.forms.form;
+//
+// const save = (users) => {
+//     content.innerHTML = '';
+//     users.forEach(user => {
+//         const userDiv = document.createElement('div');
+//         userDiv.innerText = JSON.stringify(user);
+//         content.append(userDiv);
+//     })
 // }
 //
-// document.body.appendChild(ownDiv);
+// save(usersWithAddress);
 //
-// const filterStatus = document.createElement("input");
-// const filterAge = document.createElement("input");
-// const filterCity = document.createElement("input");
-//
-// filterStatus.type = "checkbox";
-// filterAge.type = "checkbox";
-// filterCity.type = "checkbox";
-//
-// document.body.appendChild(filterStatus);
-// document.body.appendChild(filterAge);
-// document.body.appendChild(filterCity);
-//
-// const createUser = (array) =>{
-//     for (const user of array) {
-//         const userDiv = document.createElement("div");
-//         userDiv.innerText = `${user.name}, ${user.age}`;
-//         ownDiv.appendChild(userDiv);
+// form.onchange = () => {
+//     let filter = usersWithAddress;
+//     if (form.status.checked) {
+//         filter = filter.filter(value => !value.status);
 //     }
-// }
-//
-// const filterUser = (array) =>{
-//
-//     ownDiv.innerText = "";
-//     if(usersWithAddressCopy.length === 0){
-//         usersWithAddressCopy = usersWithAddressCopy.concat(array);
-//         console.log(usersWithAddressCopy);
-//         createUser(usersWithAddressCopy);
-//         } else{
-//
-//         usersWithAddressCopy = usersWithAddressCopy.filter( el => array.indexOf( el ) > -1 );
-//         if(usersWithAddressCopy === array){
-//             console.log(1)
-//         }
-//         console.log(array);
-//         createUser(usersWithAddressCopy);
+//     if (form.city.checked) {
+//         filter = filter.filter(value => value.address.city === 'Kyiv');
 //     }
-//
-//
-//     // for (const showArray of usersWithAddressCopy) {
-//     //     const userDiv = document.createElement("div");
-//     //     userDiv.innerText = `${user.name}, ${user.age}`;
-//     //     ownDiv.appendChild(userDiv);
-//
-//
-// }
-
-// //
-// // const filtersArray = document.getElementsByTagName("input");
-//
-// filterStatus.onclick = () =>{
-//     const arrayFilterStatus = usersWithAddress.filter(value => value.status === false);
-//     if(filterStatus.checked){
-//         filterUser(arrayFilterStatus);
-//     } else {
-//         let returnFilterArray = usersWithAddressCopy.concat(arrayFilterStatus).filter((v, i, arr) =>{
-//             return arr.indexOf(v) === arr.lastIndexOf(v);
-//         })
-//         if(returnFilterArray.length === 0){
-//             returnFilterArray = usersWithAddress.slice(0)
-//         }
-//         filterUser(returnFilterArray);
+//     if (form.age.checked) {
+//         filter = filter.filter(value => value.age >= 29);
 //     }
+//     save(filter);
 // }
-//
-// filterAge.onclick = () =>{
-//     const arrayFilterAge = usersWithAddress.filter(value => value.age >= 29);
-//     if(filterAge.checked){
-//         filterUser(arrayFilterAge);
-//     } else {
-//         let returnFilterArray = usersWithAddressCopy.concat(arrayFilterAge).filter((v, i, arr) =>{
-//             return arr.indexOf(v) === arr.lastIndexOf(v);
-//         })
-//
-//         if(returnFilterArray.length === 0){
-//             returnFilterArray = usersWithAddress.slice(0)
-//         }
-//         filterUser(returnFilterArray);
-//     }
-// }
-//
-// filterCity.onclick = () =>{
-//     const arrayFilterCity = usersWithAddress.filter(value => value.address.city === "Kyiv");
-//     if(filterCity.checked){
-//         filterUser(arrayFilterCity);
-//     } else {
-//         let returnFilterArray = usersWithAddressCopy.concat(arrayFilterCity).filter((v, i, arr) =>{
-//             return arr.indexOf(v) === arr.lastIndexOf(v);
-//         })
-//
-//         if(returnFilterArray.length === 0){
-//             returnFilterArray = usersWithAddress.slice(0)
-//         }
-//         filterUser(returnFilterArray);
-//     }
-// }
-
 
 
 //
@@ -331,26 +271,75 @@ let usersWithAddress = [
 // НО если у (какого-либо)дочеренего элемента есть дети, то нажатие "вперед" позволяет нам войти внутрь элемента и  выводит первого ребенка. и тд.
 //     Когда все дети заканчиваются, мы выходим из данного дочернего элемента и переходим к следующему, лежащему с ним на одном уровне
 //
+
+
+
 // - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
 //
+// const prev = document.getElementById("prev");
+// const next = document.getElementById("next");
+//
+// const photos = document.getElementsByTagName("img");
+// console.log(photos);
+//
+// let i = 0;
+//
+// next.onclick = () => {
+//     photos[i].style.display = "none";
+//     i++;
+//
+//     if (i === photos.length){
+//         i = 0;
+//     }
+//
+//     photos[i].style.display = "block";
+// }
+//
+// prev.onclick = () =>{
+//     console.log(i)
+//     photos[i].style.display = "none";
+//     i--;
+//
+//     if (i < 0){
+//         i = photos.length - 1;
+//     }
+//
+//     photos[i].style.display = "block";
+// }
+
+//
+
 //     Завдання важке для розуміння, але дуже легке в реалізації. Тут треба буде погуглити
 // *** При виділені сегменту тексту на сторінці він стає жирний/курсивний/або якось іншим способом змінює свій стан
-
-const div = document.createElement("div");
-
-div.innerText = "fghjk";
-
-document.body.appendChild(div);
-const div1 = document.createElement("div");
-
-div1.innerText = "fdrgxgrk";
-
-document.body.appendChild(div1);
-
-
-document.querySelector("*").onmouseup = function() {
-        const selected_text = window.getSelection();
-        console.log(selected_text);
-
-}
+//
+// const div = document.createElement("div");
+//
+// div.innerText = "Oleksandr";
+//
+// document.body.appendChild(div);
+// const div1 = document.createElement("div");
+//
+// div1.innerText = "Popov";
+//
+// document.body.appendChild(div1);
+//
+// document.querySelector("*").onmouseup = function(e) {
+//
+//     const selected_text = window.getSelection();
+//     const targetSegment = selected_text.toString();
+//     let tagText = e.target.innerText;
+//
+//     if (e.target.localName === "strong"){
+//         tagText = e.target.parentElement.innerText;
+//     }
+//
+//     if(targetSegment.length > 0){
+//         if (e.target.localName === "strong"){
+//             e.target.parentElement.innerHTML = `${tagText.slice(0, tagText.indexOf(targetSegment))}<strong>${targetSegment}</strong>${tagText.slice(tagText.indexOf(targetSegment) + targetSegment.length)}`;
+//         }else if(e.target.localName !== "strong") {
+//             e.target.innerHTML = `${tagText.slice(0, tagText.indexOf(targetSegment))}<strong>${targetSegment}</strong>${tagText.slice(tagText.indexOf(targetSegment) + targetSegment.length)}`;
+//         }
+//     }
+// }
+//
 

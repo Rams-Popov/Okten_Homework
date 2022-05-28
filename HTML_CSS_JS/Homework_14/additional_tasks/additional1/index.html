@@ -7,16 +7,62 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        .hide{
-            opacity: 0;
+
+        #gallery{
+            display: flex;
+            width: 100vw;
         }
-        .hide2{
-            opacity: 0;
-            position: absolute;
+
+        #gallery .photos img{
+            width: 50vw;
+            height: 90vh;
+            display: none;
         }
+
+        #gallery .photos img:first-child{
+            display: block;
+        }
+
+        .buttons{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            border: none;
+            width: 2vw;
+            height: 4vh;
+        }
+
+        #next{
+            background: url(http://s1.iconbird.com/ico/0912/ToolbarIcons/w256h2561346685452ArrowLeft.png) 50% 50% no-repeat;
+            background-size: contain;
+        }
+
+        #prev{
+            background: url(http://s1.iconbird.com/ico/0912/ToolbarIcons/w256h2561346685452ArrowRight.png) 50% 50% no-repeat;
+            background-size: contain;
+        }
+
     </style>
 </head>
 <body>
+
+<div id="gallery">
+    <div class="buttons">
+        <button id="prev"></button>
+    </div>
+    <div class="photos">
+        <img src="https://upload.wikimedia.org/wikipedia/en/a/aa/Bart_Simpson_200px.png">
+        <img src="http://cdn.cnn.com/cnnnext/dam/assets/211004122539-restricted-15-the-simpsons-balenciaga-paris-fashion-week.jpg">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4ZNwdK9lSjqjqE8HNb9TfWJPW6j-NB1lQp44uUTHkmdcusbgI4mLpgK4_lXG_KTw9SmM&usqp=CAU">
+    </div>
+    <div class="buttons">
+        <button id="next"></button>
+    </div>
+</div>
+
 <!--<div class="fghjk" id="content"></div>-->
 <!--<h1>Правила бойцовского клуба</h1>-->
 <!--<div id="wrap">-->
@@ -55,6 +101,7 @@
 <!--        <p>Новичок обязан принять бой.</p>-->
 <!--    </div>-->
 <!--</div>-->
+
 <script src="scripts/main.js"></script>
 </body>
 </html>
