@@ -264,14 +264,77 @@
 // }
 
 
-//
-//
 // *****(Прям овердоз с рекурсией) Создать функцию которая принимает какой-либо элемент DOM-структуры .Функция создает в боди 2 кнопки (назад/вперед)
 // при нажатии вперед, вы переходите к дочернему элементу, при еще одном нажатии на "вперед", вы переходите к следующему дочернему элементу (лежащему на одном уровне)
 // НО если у (какого-либо)дочеренего элемента есть дети, то нажатие "вперед" позволяет нам войти внутрь элемента и  выводит первого ребенка. и тд.
 //     Когда все дети заканчиваются, мы выходим из данного дочернего элемента и переходим к следующему, лежащему с ним на одном уровне
 //
 
+const giveDomElement = (domElement) =>{
+    const btnNext = document.createElement("button");
+    const btnPrev = document.createElement("button");
+
+    let targetElement = document.getElementsByTagName(domElement)[0];
+    targetElement.style.backgroundColor = "silver";
+
+
+    btnNext.innerText = "Next";
+    btnPrev.innerText = "Prev";
+
+    let prevTarget = targetElement;
+    let inner = false;
+
+    btnNext.onclick = () =>{
+        innerElement(targetElement.nextElementSibling ? targetElement.nextElementSibling : document.body.children[0]);
+    }
+
+    btnPrev.onclick = () =>{
+        const prevEl = targetElement.previousElementSibling;
+        innerElement(prevEl);
+    }
+
+
+    const innerElement = (element) => {
+
+        prevTarget.style.backgroundColor = "white";
+        targetElement.style.backgroundColor = "white";
+        targetElement = element;
+
+        // inner = element.children.length !== 0;
+
+        if(inner) {
+
+            console.log(targetElement);
+            if(targetElement.children.length > 0){
+                targetElement = targetElement.children[0];
+                console.log(targetElement.children[0])
+                innerElement(targetElement.children[0]);
+
+            }
+        }
+        // console.log(targetElement);
+        targetElement.style.backgroundColor = "silver";
+
+        // inner = element.children.length !== 0;
+        if (element.children.length !== 0){
+            inner = true;
+            targetElement = targetElement.previousElementSibling;
+        }
+        //
+        // if (element.children.length === 0){
+        //     if (targetElement === element.parentNode.children[element.parentNode.children.length - 1]){
+        //         prevTarget = targetElement;
+        //         targetElement = targetElement.parentElement;
+        //     }
+        // } else {
+        //     innerElement(targetElement.children[0]);
+        // }
+    }
+
+    document.body.append(btnNext, btnPrev);
+}
+
+giveDomElement("h1");
 
 
 // - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
@@ -307,7 +370,6 @@
 //     photos[i].style.display = "block";
 // }
 
-//
 
 //     Завдання важке для розуміння, але дуже легке в реалізації. Тут треба буде погуглити
 // *** При виділені сегменту тексту на сторінці він стає жирний/курсивний/або якось іншим способом змінює свій стан
