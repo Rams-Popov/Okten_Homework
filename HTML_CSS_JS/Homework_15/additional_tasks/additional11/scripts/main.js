@@ -14,16 +14,19 @@ let users = [
 ];
 // створити під кожен об'єкт свій блок з конопкою "додати до улюблених" при натисканні на яку об'єкт потрапляє до масиву
 // favorites улюблених обраних об'єктів в локальному сховищі.
-// Створити сторніку favorites.html при переході на яку потрібно вивест в документ всіх обраних на попередньому етапі.
+// Створити сторніку list.html при переході на яку потрібно вивест в документ всіх обраних на попередньому етапі.
 
 const ownDiv = document.createElement("div");
 ownDiv.classList.add("users");
+
+const div = document.createElement("div");
+const p = document.createElement("p");
+const button = document.createElement("button");
 
 for (const user of users) {
     const div = document.createElement("div");
     const p = document.createElement("p");
     const button = document.createElement("button");
-
     p.classList.add("user");
     p.innerText = `Name: ${user.name}
                    Age: ${user.age}
@@ -38,3 +41,31 @@ for (const user of users) {
 }
 
 document.body.appendChild(ownDiv);
+
+const arrayButtons = document.getElementsByTagName("button");
+
+for (let i = 0; i < arrayButtons.length; i++) {
+    console.log()
+    arrayButtons[i].addEventListener("click", () => {
+        console.log(i)
+        const user = users[i];
+
+        if (!localStorage.getItem("favorites")) {
+            localStorage.setItem("favorites", JSON.stringify([user]));
+        } else {
+            const storageArray = JSON.parse(localStorage.getItem("favorites"));
+
+            storageArray.push(user);
+
+            localStorage.setItem("favorites", JSON.stringify(storageArray));
+        }
+    })
+}
+
+const favorites = document.createElement("a");
+
+favorites.innerText = "Favorites Users";
+favorites.href = "favorites.html";
+
+document.body.appendChild(favorites);
+
