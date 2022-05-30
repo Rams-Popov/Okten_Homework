@@ -284,8 +284,23 @@ const giveDomElement = (domElement) =>{
     let prevTarget = targetElement;
     let inner = false;
 
+    // const allClasses = [];
+    //
+    // const findAllClasses = (where) =>{
+    //     const element = where.children;
+    //     for (const el of element) {
+    //         allClasses.push(el.tagName)
+    //
+    //
+    //         if (el.children.length !== 0){
+    //             findAllClasses(el);
+    //         }
+    //         console.log(el)
+    //     }
+    // }
+
     btnNext.onclick = () =>{
-        innerElement(targetElement.nextElementSibling ? targetElement.nextElementSibling : document.body.children[0]);
+        findAllClasses(targetElement.nextElementSibling ? targetElement.nextElementSibling : document.body.children[0]);
     }
 
     btnPrev.onclick = () =>{
@@ -294,48 +309,88 @@ const giveDomElement = (domElement) =>{
     }
 
 
-    const innerElement = (element) => {
 
-        prevTarget.style.backgroundColor = "white";
-        targetElement.style.backgroundColor = "white";
-        targetElement = element;
 
-        // inner = element.children.length !== 0;
 
-        if(inner) {
 
-            console.log(targetElement);
-            if(targetElement.children.length > 0){
-                targetElement = targetElement.children[0];
-                console.log(targetElement.children[0])
-                innerElement(targetElement.children[0]);
-
-            }
-        }
-        // console.log(targetElement);
-        targetElement.style.backgroundColor = "silver";
-
-        // inner = element.children.length !== 0;
-        if (element.children.length !== 0){
-            inner = true;
-            targetElement = targetElement.previousElementSibling;
-        }
-        //
-        // if (element.children.length === 0){
-        //     if (targetElement === element.parentNode.children[element.parentNode.children.length - 1]){
-        //         prevTarget = targetElement;
-        //         targetElement = targetElement.parentElement;
-        //     }
-        // } else {
-        //     innerElement(targetElement.children[0]);
-        // }
-    }
+    // const innerElement = (element) => {
+    //
+    //     prevTarget.style.backgroundColor = "white";
+    //     targetElement.style.backgroundColor = "white";
+    //     targetElement = element;
+    //
+    //     // inner = element.children.length !== 0;
+    //
+    //     if(inner) {
+    //
+    //         console.log(targetElement);
+    //         if(targetElement.children.length > 0){
+    //             targetElement = targetElement.children[0];
+    //             console.log(targetElement.children[0])
+    //             innerElement(targetElement.children[0]);
+    //
+    //         }
+    //     }
+    //     // console.log(targetElement);
+    //     targetElement.style.backgroundColor = "silver";
+    //
+    //     // inner = element.children.length !== 0;
+    //     if (element.children.length !== 0){
+    //         inner = true;
+    //         targetElement = targetElement.previousElementSibling;
+    //     }
+    //     //
+    //     // if (element.children.length === 0){
+    //     //     if (targetElement === element.parentNode.children[element.parentNode.children.length - 1]){
+    //     //         prevTarget = targetElement;
+    //     //         targetElement = targetElement.parentElement;
+    //     //     }
+    //     // } else {
+    //     //     innerElement(targetElement.children[0]);
+    //     // }
+    // }
 
     document.body.append(btnNext, btnPrev);
 }
 
-giveDomElement("h1");
+// giveDomElement("h1");
 
+const getDOM = (function() {
+    let dom = "",
+        depth = 0;
+
+    return function(node, n) {
+        for (let i = 0; i < depth; i++) {
+            dom += '<span>|---</span>';
+        }
+
+        dom += '<b>' + node.nodeName.toLowerCase() + '</b>';
+
+        if (node.id) {
+            dom += '[#' + node.id + ']';
+        }
+
+        if (node.className) {
+            dom += '(' + node.className + ')'
+        }
+
+        if (typeof n === 'number') {
+            dom += '<span>{child #' + n + '}</span>';
+        }
+
+        dom += '<br>';
+        depth++;
+
+        [].forEach.call(node.children, function(node, childNumber) {
+            getDOM(node, childNumber);
+        });
+
+        depth--;
+        return dom;
+    };
+})();
+
+console.log(getDOM())
 
 // - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
 //
