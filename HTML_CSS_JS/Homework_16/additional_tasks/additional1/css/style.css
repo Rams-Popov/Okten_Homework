@@ -10,8 +10,9 @@
 
     align-items: center;
     width: 33%;
+    margin: 1% 0;
 
-    border: solid 1px cornflowerblue;
+    border: solid 2px cornflowerblue;
     box-sizing: border-box;
 }
 
@@ -19,16 +20,75 @@
     font-weight: 400;
 }
 
-#userPostsDiv>div{
+.userPostsDiv{
+    margin: 5px;
+    box-sizing: border-box;
+}
+
+.userPostsDiv>div,
+.postCommentsDiv>div{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 10px;
+    border: solid 2px rebeccapurple;
+    box-sizing: border-box;
 }
 
-#userPostsDiv>div>h4{
+.userPostsDiv>div>h4,
+.postCommentsDiv>div>h4{
     margin: 0;
 }
 
-#userPostsDiv>div>p{
+.userPostsDiv>div>p,
+.postCommentsDiv>div>p{
     text-align: center;
 }
+
+.postCommentsDiv{
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+.postCommentsDiv>div{
+    margin: 10px;
+}
+
+button {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 25px;
+    margin: 0 15px 15px 0;
+    outline: none;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    height: 46px;
+    line-height: 46px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #444;
+    background-color: orange;
+    box-shadow: 0 4px 6px rgb(204, 21, 21), 0 1px 3px rgb(35, 194, 38);
+    cursor: pointer;
+    user-select: none;
+    appearance: none;
+    touch-action: manipulation;
+    vertical-align: top;
+    transition: box-shadow 0.2s;
+}
+
+button:focus-visible {
+    border: 1px solid #4c51f9;
+    outline: none;
+}
+
+button:hover {
+    transition: all 0.2s;
+    box-shadow: 0 7px 14px rgba(65, 132, 144, 0.68), 0 3px 6px rgb(35, 72, 194);
+}
+
+button:active {
+    background-color: #28e8bb;
+}
+

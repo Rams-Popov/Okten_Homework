@@ -56,7 +56,7 @@ fetch("https://jsonplaceholder.typicode.com/users")
                         .then(value => value.json())
                         .then(userPosts => {
                             const userPostsDiv = document.createElement('div');
-                            userPostsDiv.id = "userPostsDiv";
+                            userPostsDiv.setAttribute("class", `userPostsDiv posts${id}`);
 
                             for (const post of userPosts) {
                                 const {userId, id, title, body} = post;
@@ -66,35 +66,46 @@ fetch("https://jsonplaceholder.typicode.com/users")
                                                      <h4>Title:</h4> 
                                                      <p>${title}</p>`;
 
-
                                 const postP = document.createElement("p");
                                 postP.innerHTML = `Post: <br> ${body}`;
 
                                 const buttonPostComments = document.createElement("button");
-                                buttonPostComments.innerText = "Comments show"
+                                buttonPostComments.innerText = "Comments show";
 
                                 buttonPostComments.onclick = () =>{
-                                    fetch(`https://jsonplaceholder.typicode.com/comments?postId=${userId}`)
-                                        .then(value => value.json())
-                                        .then(postComments => {
-                                            const postCommentsDiv = document.createElement('div');
+                                    if (buttonPostComments.innerText === "Comments show") {
+                                        fetch(`https://jsonplaceholder.typicode.com/comments?postId=${id}`)
+                                            .then(value => value.json())
+                                            .then(postComments => {
+                                                const postCommentsDiv = document.createElement('div');
+                                                postCommentsDiv.setAttribute("class", `postCommentsDiv comments${id}`);
 
-                                            for (const comment of postComments) {
-                                                const {postId, id, name, email, body} = comment;
+                                                for (const comment of postComments) {
+                                                    const {postId, id, name, email, body} = comment;
 
-                                                const commentDiv = document.createElement("div");
-                                                commentDiv.innerHTML = `<h4>ID: ${id}</h4>
-                                                                     <h4>Name: ${name}</h4> 
-                                                                     <h4>email: ${email}</h4>`;
+                                                    const commentDiv = document.createElement("div");
+                                                    commentDiv.innerHTML = `<h4>ID: ${id}</h4>
+                                                                         <h4>Name: ${name}</h4> 
+                                                                         <h4>email: ${email}</h4>`;
 
-                                                const commentP = document.createElement("p");
-                                                commentP.innerHTML = `Comment: <br> ${body}`;
+                                                    const commentP = document.createElement("p");
+                                                    commentP.innerHTML = `Comment: <br> ${body}`;
 
-                                                commentDiv.appendChild(commentP);
-                                                postCommentsDiv.appendChild(commentDiv);
-                                            }
-                                            postDiv.appendChild(postCommentsDiv);
-                                        })
+                                                    commentDiv.appendChild(commentP);
+                                                    postCommentsDiv.appendChild(commentDiv);
+                                                }
+
+                                                buttonPostComments.innerText = "Comments hide";
+                                                buttonPostComments.style.backgroundColor = "green";
+                                                buttonPostComments.style.color = "white";
+                                                postDiv.appendChild(postCommentsDiv);
+                                            })
+                                        } else {
+                                        document.getElementsByClassName(`comments${id}`)[0].remove();
+                                        buttonPostComments.innerText = "Comments show";
+                                        buttonPostComments.style.backgroundColor = "orange";
+                                        buttonPostComments.style.color = "#444";
+                                    }
                                 }
 
                                 postDiv.append(postP, buttonPostComments);
@@ -104,9 +115,13 @@ fetch("https://jsonplaceholder.typicode.com/users")
                             userDiv.appendChild(userPostsDiv);
                         })
                     buttonUserPosts.innerText = "Posts hide";
+                    buttonUserPosts.style.backgroundColor = "blue";
+                    buttonUserPosts.style.color = "white";
                 } else {
-                    document.getElementById("userPostsDiv").remove();
+                    document.getElementsByClassName(`posts${id}`)[0].remove();
                     buttonUserPosts.innerText = "Posts show";
+                    buttonUserPosts.style.backgroundColor = "orange";
+                    buttonUserPosts.style.color = "#444";
                 }
             }
 
@@ -116,11 +131,3 @@ fetch("https://jsonplaceholder.typicode.com/users")
         }
         document.body.appendChild(mainContainer);
     })
-
-
-
-// 1.
-// Отримати відповідь з цього ресурсу відповідь, та вивести в документ як в прикладі на занятті
-// https://jsonplaceholder.typicode.com/posts
-//     зробити кнопку до кожного поста. при кліку на яку виводяться в окремий блок всі коментарі поточного поста
-//

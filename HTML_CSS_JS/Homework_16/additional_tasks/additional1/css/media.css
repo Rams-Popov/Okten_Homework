@@ -1,0 +1,12 @@
+
+@media screen and (max-width: 1023px) {
+    .main-container>div{
+        width: 49%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .main-container>div{
+        width: 90%;
+    }
+}
