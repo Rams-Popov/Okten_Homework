@@ -138,6 +138,8 @@ span{
 }
 
 .comments-container>div{
+    padding: 2%;
+    box-sizing: border-box;
     width: 25%;
     background-color: #0ed311;
     color: #7e3030;
