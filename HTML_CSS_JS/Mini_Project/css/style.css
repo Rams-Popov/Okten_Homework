@@ -21,44 +21,6 @@
     box-sizing: border-box;
 }
 
-/*.main-container>div>h3>span{*/
-/*    font-weight: 400;*/
-/*}*/
-
-/*.userPostsDiv{*/
-/*    margin: 5px;*/
-/*    box-sizing: border-box;*/
-/*}*/
-
-/*.userPostsDiv>div,*/
-/*.postCommentsDiv>div{*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    align-items: center;*/
-/*    margin-top: 10px;*/
-/*    border: solid 2px rebeccapurple;*/
-/*    box-sizing: border-box;*/
-/*}*/
-
-/*.userPostsDiv>div>h4,*/
-/*.postCommentsDiv>div>h4{*/
-/*    margin: 0;*/
-/*}*/
-
-/*.userPostsDiv>div>p,*/
-/*.postCommentsDiv>div>p{*/
-/*    text-align: center;*/
-/*}*/
-
-/*.postCommentsDiv{*/
-/*    box-sizing: border-box;*/
-/*    margin: 0 10px 15px;*/
-/*}*/
-
-/*.postCommentsDiv>div{*/
-/*    margin: 10px;*/
-/*}*/
-
 button {
     display: inline-block;
     box-sizing: border-box;
@@ -101,7 +63,8 @@ button:active {
     width: 90%;
 }
 
-.users-main-container{
+.users-main-container,
+.post-main-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -110,16 +73,20 @@ button:active {
     background-color: #157715;
 }
 
-.user-div{
+.user-div,
+.post-container{
     width: 40%;
     padding: 2% 5%;
     box-sizing: border-box;
-    margin-bottom: 2%;
-
-    /*text-align: center;*/
+    margin: 2% 0;
 
     background-color: #73e4e8;
-    color: #981010;
+    color: #c22323;
+}
+
+span{
+    color: black;
+    font-weight: 400;
 }
 
 .user-div>div>p{
@@ -136,7 +103,8 @@ button:active {
 }
 
 
-.posts-titles-container-show>div{
+.posts-titles-container-show>div,
+.comments-container>div{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -150,8 +118,34 @@ button:active {
     color: #d3f4f8;
 }
 
-.posts-titles-container-show>h4>span{
-    font-weight: 400;
+.post-main-container{
+    background-color: #459b9f;
 }
+
+.post-container{
+    background-color: #f9c177;
+    color: #19c219;
+}
+
+.comments-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.email{
+    font-style: italic;
+    font-size: 14px;
+}
+
+.comments-container>div{
+    width: 25%;
+    background-color: #0ed311;
+    color: #7e3030;
+}
+
+.comments-container>div>h3{
+    margin: 0;
+}
+
 
 

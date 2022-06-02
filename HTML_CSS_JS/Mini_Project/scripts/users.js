@@ -16,10 +16,10 @@ for (const value in address) {
     const addressP = document.createElement("p");
     if (typeof address[value] === "object"){
         for (const valueKey in address[value]) {
-            addressP.innerHTML += `<b>${valueKey.toUpperCase()}:</b> ${address[value][valueKey]}<br>`;
+            addressP.innerHTML += `<b>${valueKey.toUpperCase()}:</b> <span>${address[value][valueKey]}</span><br>`;
         }
     }else {
-        addressP.innerHTML += `<b>${value.toUpperCase()}:</b> ${address[value]}`;
+        addressP.innerHTML += `<b>${value.toUpperCase()}:</b> <span>${address[value]}</span>`;
     }
     addressDiv.appendChild(addressP);
 }
@@ -27,14 +27,14 @@ for (const value in address) {
 companyDiv.innerHTML = `<h3>Company:</h3>`
 for (const value in company) {
     const companyP = document.createElement("p");
-    companyP.innerHTML += `<b>${value}:</b> ${company[value]}`;
+    companyP.innerHTML += `<b>${value}:</b> <span>${company[value]}</span>`;
     companyDiv.appendChild(companyP);
 }
 
-userDiv.innerHTML = `<h2>ID: ${id} <br>
-                     Name: ${name}<br>
-                     User Name: ${username}<br>
-                     email: ${email} </h2>`;
+userDiv.innerHTML = `<h2>ID: <span>${id}</span><br>
+                     Name: <span>${name}</span><br>
+                     User Name: <span>${username}</span><br>
+                     email: <span>${email}</span></h2>`;
 
 userDiv.appendChild(addressDiv);
 
@@ -56,11 +56,18 @@ fetch(`https://jsonplaceholder.typicode.com/users/${id}/posts`)
         for (const post of userPosts) {
             const titlePostDiv = document.createElement("div");
 
-            const r = Math.round( Math.random() * 245);
-            const g = Math.round( Math.random() * 245);
-            const b = Math.round( Math.random() * 245);
+            setInterval(() => {
+                const r = Math.round( Math.random() * 245);
+                const g = Math.round( Math.random() * 245);
+                const b = Math.round( Math.random() * 245);
+                titlePostDiv.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+            }, 2000)
 
-            titlePostDiv.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+            // const r = Math.round( Math.random() * 245);
+            // const g = Math.round( Math.random() * 245);
+            // const b = Math.round( Math.random() * 245);
+
+            // titlePostDiv.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
             const titlePostH4 = document.createElement("h4");
             titlePostH4.innerHTML = `Title:<br> <span>${post.title}</span>`;
 

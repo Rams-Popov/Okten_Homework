@@ -5,8 +5,30 @@
     }
 }
 
-@media screen and (max-width: 750px) {
-    .main-container>div{
+@media screen and (max-width: 768px) {
+    .main-container>div,
+    .post-container{
         width: 90%;
+    }
+
+    .user-div{
+        width: 60%;
+    }
+
+    .comments-container>div,
+    .posts-titles-container-show>div{
+        width: 33.3%;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .post-container,
+    .user-div{
+        width: 95%;
+    }
+
+    .comments-container>div,
+    .posts-titles-container-show>div{
+        width: 50%;
     }
 }
