@@ -1,0 +1,44 @@
+Lesson 1
+http://owu.linkpc.net/  - databases okten
+Show databases
+use назва бази даних
+show tables
+create table users
+(
+ 	id int not null primary key auto_increment,
+	Name varchar(255) not null,
+	Age int not null,
+Gender varcgar(6) npt nul
+);
+
+insert into users values (null,‘max’, 16,’male’);
+select * from users;
+select * from users where name=’oleg’;
+select * from users where name like ‘o%’;
+select * from users where name like ‘_i_a%’;
+select * from users where age!=19;
+select * from users where age>19 and <=30;
+select * from users where age between 19 and 30 or name=’max’;
+select * from users where age in(12,23);
+select * from users where length(name) >4;
+select name, age from users where length(name) >4;
+select * from users order by name; -сортування
+select * from users order by name desc; -навпаки
+select * from user limit 2; перші два юзера (пагінація)
+select * from user where gender=’female’ order by id desc limit 2; -дві останні дівчини
+select * from user limit 2 offset 2;  -пропусти 2 візьми інші 2
+агрегатні функції (5 штук)
+select max(age) as max_age from users;
+select min(age) as min_age from users;
+select count(age) as count, gender from users group by gender;
+select avg(age) from users;
+select sum(age) from users;
+delete from users where name like ‘karina%’;
+update users set age=2 where id=4;
+
+
+
+
+
+
+
