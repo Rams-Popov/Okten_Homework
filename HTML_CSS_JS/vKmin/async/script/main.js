@@ -119,35 +119,91 @@ const goClub = (moneyForClub) => {
 //         console.log('Enough for today!');
 //     })
 
-async function routine(){
-    try {
-        const wakeUpStatus = await wakeUp(true);
-        console.log(wakeUpStatus);
+// async function routine(){
+//     try {
+//         const wakeUpStatus = await wakeUp(true);
+//         console.log(wakeUpStatus);
+//
+//         const breakfastStatus = await breakfast(true);
+//         console.log(breakfastStatus);
+//
+//         const goWorkStatus = await goWork(true);
+//         console.log(goWorkStatus);
+//
+//         const money = await howManyTimeWork(8);
+//         console.log(`You earned ${money}$`);
+//
+//         const moneyAfterProducts = await buyProducts(money);
+//         console.log(`You bought products! You have ${moneyAfterProducts}$ left`);
+//
+//         const moneyAfterPub = await goPub(moneyAfterProducts);
+//         console.log(`You rested in a pub! You have ${moneyAfterPub}$ left`);
+//
+//         const moneyAfterClub = await goClub(moneyAfterPub);
+//         console.log(`You rested in a club! You have ${moneyAfterClub}$ left for tomorrow`);
+//
+//     } catch (e) {
+//         console.warn(e);
+//     } finally {
+//         console.log('Enough for today!');
+//     }
+//
+// }
+//
+// routine();
 
-        const breakfastStatus = await breakfast(true);
-        console.log(breakfastStatus);
-
-        const goWorkStatus = await goWork(true);
-        console.log(goWorkStatus);
-
-        const money = await howManyTimeWork(8);
-        console.log(`You earned ${money}$`);
-
-        const moneyAfterProducts = await buyProducts(money);
-        console.log(`You bought products! You have ${moneyAfterProducts}$ left`);
-
-        const moneyAfterPub = await goPub(moneyAfterProducts);
-        console.log(`You rested in a pub! You have ${moneyAfterPub}$ left`);
-
-        const moneyAfterClub = await goClub(moneyAfterPub);
-        console.log(`You rested in a club! You have ${moneyAfterClub}$ left for tomorrow`);
-
-    } catch (e) {
-        console.warn(e);
-    } finally {
-        console.log('Enough for today!');
-    }
-
-}
-
-routine();
+// let en = 100;
+//
+// function wakeup(en, cb) {  //cb (Перше значення ерор, ... ,останнє дані)
+//     setTimeout(() => {
+//         en -= 200;
+//         if (en <= 0){
+//             cb('dont wakeup', null);
+//             return;
+//         }
+//         console.log('wakeup');
+//         cb(null, en);
+//     }, 2000)
+// }
+//
+// function eat(en, cb) {
+//     setTimeout(() => {
+//         en += 300;
+//         console.log('njam');
+//         cb(null, en);
+//     }, 1000)
+// }
+//
+// function goWorks(en, cb) {
+//     setTimeout(() => {
+//         en -= 400;
+//         if (en <= 0){
+//             cb('dont work', null);
+//             return;
+//         }
+//         console.log('work');
+//         cb(null, en);
+//     }, 500)
+// }
+//
+// wakeup(en, (err, data) =>{
+//     if(err){
+//         console.log(err);
+//         return
+//     }
+//     console.log(`${data}`)
+//     eat(en, (err, data) =>{
+//         if(err){
+//             console.log(err);
+//             return;
+//         }
+//         console.log(`${data}`);
+//         goWorks(en, (err, data) => {
+//             if(err){
+//                 console.log(err);
+//                 return;
+//             }
+//             console.log(`${data}`);
+//         })
+//     })
+// })
