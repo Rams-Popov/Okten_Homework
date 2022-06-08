@@ -1,0 +1,50 @@
+Реліаційна база даних
+Один до одного і один до багатьох
+select distinct name from user – унікальні значення
+select max(age) from user
+union
+select min(age) from user; обєднання
+Один до одного
+create table users
+(
+ 	id int primary key auto_increment,
+	username varchar(255) not null,
+	Age varchar(255) not null,
+Profile_id int not null unique,
+Foreign key (Profile_id) references profile(id)
+);
+create table profile
+(
+ 	id int primary key auto_increment,
+	name varchar(100) not null,
+	surname varchar(100) not null,
+age int not null default 18
+);
+
+select * from users;
+select * from profile;
+select * from users join profile p on.id = users.profile_id;
+select users.id, users.username, profile.*  from users join profile p on.id = users.profile_id;
+один до багатьох
+create table cities
+(
+ 	id int primary key auto_increment,
+	city varchar(100) null
+);
+create table users
+(
+ 	id int primary key auto_increment,
+	name varchar(100) not null,
+	Age int not null,
+	City_id int null,
+Foreign key (city_id) references cities(id)
+)
+select * from users u join cities c on c.id = u.city_id;
+select * from users u left join cities c on c.id = u.city_id;
+select * from users u right join cities c on c.id = u.city_id;
+
+select * from client c join app a on c.id = u.city_id;
+select * from department c 
+join dep d on d.iddep = c.dep_id_dep
+join app a on c.idCli = a.Cl_id_cl
+where City = “lviv”;
