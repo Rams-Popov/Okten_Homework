@@ -63,7 +63,7 @@
 #     join department d on d.idDepartment = client.Department_idDepartment group by DepartmentCity limit 1;
 
 # 17. Усім клієнтам, які мають вищу освіту, встановити усі їхні кредити у розмірі 6000 грн.
-# update application set Sum=6000 where Client_idClient in (select idClient from client where Education = 'high');
+# update application set Sum=6000, Currency='Grivnia' where Client_idClient in (select idClient from client where Education = 'high');
 
 # 18. Усіх клієнтів київських відділень пересилити до Києва.
 # update client set City='Kyiv' where Department_idDepartment
