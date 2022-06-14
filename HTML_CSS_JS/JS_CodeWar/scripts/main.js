@@ -245,14 +245,77 @@ function permutations(string) {
         for (let j = 0; j < string.length; j++) {
             if (i !== j) {
                 const arr2 = string.split('');
-                // console.log(console.log(string[j]);
-                console.log([arr2[i], arr2[j] = arr2[j], arr2[i]]);
-                // arr.push(]);
+                [arr2[i], arr2[j]] = [arr2[j], arr2[i]];
+                if (arr.find(value => value === arr2.join("")) === undefined){
+                    arr.push(arr2.join(''));
+                }
             }
         }
-        console.log("_____________")
     }
     return arr;
 }
 
-console.log(permutations('abcdf'));
+console.log(permutations('aba'));
+
+// Азбука Морзе
+decodeMorse = function(morseCode) {
+    const symbols = {
+        "-----" :"0",
+        ".----":"1",
+        "..---":"2",
+        "...--":"3",
+        "....-":"4",
+        ".....":"5",
+        "-....":"6",
+        "--...":"7",
+        "---..":"8",
+        "----.":"9",
+        ".-":"A",
+        "-...":"B",
+        "-.-.":"C",
+        "-..":"D",
+        ".":"E",
+        "..-.":"F",
+        "--.":"G",
+        "....":"H",
+        "..":"I",
+        ".---":"J",
+        "-.-":"K",
+        ".-..":"L",
+        "--":"M",
+        "-.":"N",
+        "---":"O",
+        ".--.":"P",
+        "--.-":"Q",
+        ".-.":"R",
+        "...":"S",
+        "-":"T",
+        "..-":"U",
+        "...-":"V",
+        ".--":"W",
+        "-..-":"X",
+        "-.--":"Y",
+        "--..":"Z",
+        "-.-.--":"!",
+        ".-.-.-":".",
+        "--..--":","
+    };
+
+    const arrCode = morseCode.split("   ").join("  ").split(" ");
+    let str = '';
+    for (const code of arrCode) {
+        if (code === ''){
+            str += " ";
+        }else {
+            if(code === "···−−−···"){
+                str += "SOS";
+            } else {
+                str += symbols[code];
+            }
+        }
+    }
+    return str.trim();
+}
+
+
+console.log(decodeMorse('···−−−···'));
