@@ -25,7 +25,6 @@ fetch("https://jsonplaceholder.typicode.com/users")
 
             const buttonUser = document.createElement("button");
             buttonUser.innerText = "Open User";
-
             buttonUser.onclick = () => {
                 localStorage.setItem("user", JSON.stringify(user));
                 document.location = "user-details.html";

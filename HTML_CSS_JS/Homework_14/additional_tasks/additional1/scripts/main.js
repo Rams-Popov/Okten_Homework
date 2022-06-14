@@ -405,3 +405,6 @@ giveDomElement("h1");
 // }
 //
 
+
+a = 2 + "";
+console.log(a.length);

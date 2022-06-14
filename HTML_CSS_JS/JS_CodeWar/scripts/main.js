@@ -237,3 +237,22 @@
 // // }
 //
 // console.log(findUniq([1, 1, 2, 1, 1]));
+
+// У цій ката ви повинні створити всі перестановки непорожнього вхідного рядка та видалити дублікати, якщо вони є.
+function permutations(string) {
+    const arr = [];
+    for (let i = 0; i < string.length; i++) {
+        for (let j = 0; j < string.length; j++) {
+            if (i !== j) {
+                const arr2 = string.split('');
+                // console.log(console.log(string[j]);
+                console.log([arr2[i], arr2[j] = arr2[j], arr2[i]]);
+                // arr.push(]);
+            }
+        }
+        console.log("_____________")
+    }
+    return arr;
+}
+
+console.log(permutations('abcdf'));
