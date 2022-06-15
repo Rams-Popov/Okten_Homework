@@ -239,83 +239,117 @@
 // console.log(findUniq([1, 1, 2, 1, 1]));
 
 // У цій ката ви повинні створити всі перестановки непорожнього вхідного рядка та видалити дублікати, якщо вони є.
-function permutations(string) {
-    const arr = [];
-    for (let i = 0; i < string.length; i++) {
-        for (let j = 0; j < string.length; j++) {
-            if (i !== j) {
-                const arr2 = string.split('');
-                [arr2[i], arr2[j]] = [arr2[j], arr2[i]];
-                if (arr.find(value => value === arr2.join("")) === undefined){
-                    arr.push(arr2.join(''));
-                }
-            }
-        }
-    }
-    return arr;
-}
-
-console.log(permutations('aba'));
+// function permutations(str) {
+//     str = str.split('')
+//     const arrrr = permutations1(str).map(value => value.join(""));
+//     function permutations1(arr, prepend) {
+//         // if (typeof arr !== 'object') {
+//         //     arr = arr.split('');
+//         // }
+//         var i, version, el, result = [];
+//         prepend = prepend || [];
+//         if (arr.length === 1) return [arr];
+//         for (i = 0; i < arr.length; i++) {
+//             if (arr.length === 2) {
+//                 result.push(prepend.concat([arr[i], arr[(i + 1) % 2]]));
+//             } else {
+//                 version = arr.slice();
+//                 el = version.splice(i, 1);
+//                 result = result.concat(permutations1(version, prepend.concat(el)));
+//             }
+//         }
+//         return result;
+//     }
+//     return arrrr.filter((value, index) => arrrr.indexOf(value) === index);
+// }
+//
+// // function permutations(str) {
+// //     return (str.length <= 1) ? [str] :
+// //         Array.from(new Set(
+// //             str.split('')
+// //                 .map((char, i) => permutations(str.substr(0, i) + str.substr(i + 1)).map(p => char + p))
+// //                 .reduce((r, x) => r.concat(x), [])
+// //         ));
+// // }
+//
+// const test = permutations('aabb')
 
 // Азбука Морзе
-decodeMorse = function(morseCode) {
-    const symbols = {
-        "-----" :"0",
-        ".----":"1",
-        "..---":"2",
-        "...--":"3",
-        "....-":"4",
-        ".....":"5",
-        "-....":"6",
-        "--...":"7",
-        "---..":"8",
-        "----.":"9",
-        ".-":"A",
-        "-...":"B",
-        "-.-.":"C",
-        "-..":"D",
-        ".":"E",
-        "..-.":"F",
-        "--.":"G",
-        "....":"H",
-        "..":"I",
-        ".---":"J",
-        "-.-":"K",
-        ".-..":"L",
-        "--":"M",
-        "-.":"N",
-        "---":"O",
-        ".--.":"P",
-        "--.-":"Q",
-        ".-.":"R",
-        "...":"S",
-        "-":"T",
-        "..-":"U",
-        "...-":"V",
-        ".--":"W",
-        "-..-":"X",
-        "-.--":"Y",
-        "--..":"Z",
-        "-.-.--":"!",
-        ".-.-.-":".",
-        "--..--":","
-    };
+// decodeMorse = function(morseCode) {
+//     const symbols = {
+//         "-----" :"0",
+//         ".----":"1",
+//         "..---":"2",
+//         "...--":"3",
+//         "....-":"4",
+//         ".....":"5",
+//         "-....":"6",
+//         "--...":"7",
+//         "---..":"8",
+//         "----.":"9",
+//         ".-":"A",
+//         "-...":"B",
+//         "-.-.":"C",
+//         "-..":"D",
+//         ".":"E",
+//         "..-.":"F",
+//         "--.":"G",
+//         "....":"H",
+//         "..":"I",
+//         ".---":"J",
+//         "-.-":"K",
+//         ".-..":"L",
+//         "--":"M",
+//         "-.":"N",
+//         "---":"O",
+//         ".--.":"P",
+//         "--.-":"Q",
+//         ".-.":"R",
+//         "...":"S",
+//         "-":"T",
+//         "..-":"U",
+//         "...-":"V",
+//         ".--":"W",
+//         "-..-":"X",
+//         "-.--":"Y",
+//         "--..":"Z",
+//         "-.-.--":"!",
+//         ".-.-.-":".",
+//         "--..--":","
+//     };
+//
+//     const arrCode = morseCode.split("   ").join("  ").split(" ");
+//     let str = '';
+//     for (const code of arrCode) {
+//         if (code === ''){
+//             str += " ";
+//         }else {
+//             if(code === "'...---...'"){
+//                 str += "SOS";
+//             } else {
+//                 str += symbols[code];
+//             }
+//         }
+//     }
+//     return str.trim();
+// }
+//
+// console.log(decodeMorse('.... . -.--   .--- ..- -.. .'));
 
-    const arrCode = morseCode.split("   ").join("  ").split(" ");
-    let str = '';
-    for (const code of arrCode) {
-        if (code === ''){
-            str += " ";
-        }else {
-            if(code === "···−−−···"){
-                str += "SOS";
-            } else {
-                str += symbols[code];
-            }
+// Напишіть функцію, яка приймає рядок дужок і визначає, чи правильний порядок дужок.
+function validParentheses(parens) {
+    const findDuzh = (str) =>{
+        for (let i = 0; i < str.length; i++) {
+
         }
     }
-    return str.trim();
+    for (let i = 0; i < parens.length; i++) {
+        if (parens[i] === "("){
+            findDuzh(parens.slice(i))
+        }
+
+    }
+    return false;
 }
 
-
-console.log(decodeMorse('···−−−···'));
+console.log(validParentheses("()"));
