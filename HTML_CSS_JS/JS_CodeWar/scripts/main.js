@@ -337,19 +337,67 @@
 // console.log(decodeMorse('.... . -.--   .--- ..- -.. .'));
 
 // Напишіть функцію, яка приймає рядок дужок і визначає, чи правильний порядок дужок.
-function validParentheses(parens) {
-    const findDuzh = (str) =>{
-        for (let i = 0; i < str.length; i++) {
+// function validParentheses(parens) {
+//     const findDuzh = (str) =>{
+//         for (let i = 0; i < str.length; i++) {
+//
+//         }
+//     }
+//     for (let i = 0; i < parens.length; i++) {
+//         if (parens[i] === "("){
+//             findDuzh(parens.slice(i))
+//         }
+//
+//     }
+//     return false;
+// }
+//
+// console.log(validParentheses("()"));
 
-        }
-    }
-    for (let i = 0; i < parens.length; i++) {
-        if (parens[i] === "("){
-            findDuzh(parens.slice(i))
-        }
+// Враховуючи ціле число nта два інших значення, побудуйте масив розміру, nзаповнений цими двома значеннями, що чергуються.
+// function alternate(n, firstValue, secondValue){
+//     const arr = [];
+//     for (let i = 0; i < n; i++) {
+//         const value = i % 2 === 0 ? firstValue : secondValue;
+//         arr.push(value);
+//     }
+//     return arr;
+// }
+//
+// console.log(alternate(5, true, false));
 
-    }
-    return false;
-}
+// Ця ката стосується перетворення чисел у їх двійкове або шістнадцяткове представлення:
+// const evensAndOdds = (num) => (num % 2 === 0 ? num.toString(2) : num.toString(16));
+// // const evensAndOdds = n => n.toString(n%2 ? 16 : 2);
+//
+// console.log(evensAndOdds(8172381723));
 
-console.log(validParentheses("()"));
+// Рядок запиту - це спосіб серіалізації об'єкта, який використовується в HTTP-запитах. Ви можете побачити це в URL:
+// function toQueryString (obj) {
+//     let str = ''
+//     for (const objKey in obj) {
+//         if (typeof obj[objKey] === "object"){
+//             for (const objKeyElement of obj[objKey]) {
+//                 str += `${objKey}=${objKeyElement}&`;
+//             }
+//         } else {
+//             str += `${objKey}=${obj[objKey]}&`;
+//         }
+//     }
+//     return str.slice(0,str.length-1);
+// }
+//
+// console.log(toQueryString({foo: 1, bar: [2, 4]}));
+
+// const numbers = function(array){
+//     const arr = [];
+//     for (let i = 0; i < array.length; i++) {
+//         arr.push(`${i+1}: ${array[i]}`);
+//     }
+//     return arr;
+// }
+//
+// // let number = (a) => a.map((v, i) => `${i + 1}: ${v}`)
+//
+// console.log(numbers(["a", "b", "c"]));
+

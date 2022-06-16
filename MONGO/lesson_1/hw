@@ -37,7 +37,7 @@ db.users.find(
 
 // 7) Видалити всіх юзерів в котрих немає поля studying
 db.users.deleteMany(
-    {parents:{$exists:0}}
+    {studying:{$exists:0}}
     );
 
 // 8) Знайти всіх юзерів в котрих в ім'я когось с батьків закінчується на 'na'
